@@ -2,7 +2,7 @@ import java.util.*;
 import java.math.*;
 import java.io.*;
 
-class Main
+class Baekjoon18115
 {	
 	public static void main(String args[]) throws IOException
 	{
