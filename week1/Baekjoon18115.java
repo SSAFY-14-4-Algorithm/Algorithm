@@ -8,22 +8,32 @@ class Baekjoon18115
 	{
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		int N = Integer.parseInt(br.readLine());
-		Deque<Character> q = new ArrayDeque<>();
-		int answer = 0;
-		for(int i = 0; i < N; i++) {
-			char[] s = br.readLine().toCharArray();
-			for(char c : s) {
-				if(!q.isEmpty() && q.peekLast() == c) {
-					q.pollLast();
-				} else {
-					q.add(c);
-				}
-			}
-			if(q.isEmpty()) {
-				answer += 1;
-			}
-			q.clear();
+		Deque<Integer> q = new ArrayDeque<>();
+		int[] answer = new int[N+1];
+		for(int i = 1; i < N+1; i++) {
+			q.add(i);
 		}
-		System.out.println(answer);
+		StringTokenizer st = new StringTokenizer(br.readLine());
+		for(int cnt = N; cnt >= 1; cnt--) {
+			String s = st.nextToken();
+			switch(s) {
+			case "1":
+				answer[q.poll()] = cnt;
+				break;
+			case "2":
+				int temp = q.poll();
+				answer[q.poll()] = cnt;
+				q.addFirst(temp);
+				break;
+			case "3":
+				answer[q.pollLast()] = cnt;
+				break;
+			}
+		}
+		StringBuilder sb = new StringBuilder();
+		for(int i = 1; i <= N; i++) {
+			sb.append(answer[i]).append(" ");
+		}
+		System.out.println(sb);
 	}
 }
