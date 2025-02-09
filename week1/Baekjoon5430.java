@@ -2,7 +2,7 @@ import java.io.*;
 import java.util.*;
 
 
-public class Baekjoon_5430 {
+public class Baekjoon5430 {
 	public static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 	public static void main(String[] args) throws IOException {
 		int T = Integer.parseInt(br.readLine());

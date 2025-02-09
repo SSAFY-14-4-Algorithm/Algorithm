@@ -1,7 +1,7 @@
 import java.io.*;
 import java.util.*;
 
-public class Baekjoon_18115 {
+public class Baekjoon18115 {
 	public static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 	
     public static void main(String[] args) throws IOException {
