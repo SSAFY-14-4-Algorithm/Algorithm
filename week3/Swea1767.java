@@ -1,5 +1,8 @@
 package week3;
 
+import java.io.*;
+import java.util.*;
+
 public class Swea1767{
     private static final int CORE = 1, WIRE = 2,BLANK = 0;
 	private static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
