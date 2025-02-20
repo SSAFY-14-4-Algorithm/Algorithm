@@ -1,6 +1,7 @@
 import java.io.*;
 import java.util.*;
 
+
 public class Baekjoon17471{
 	
 	static int N;
