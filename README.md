@@ -66,3 +66,22 @@
 
 1062 가르침 [https://www.acmicpc.net/problem/1062](https://www.acmicpc.net/problem/1062 "https://www.acmicpc.net/problem/1062")
 </details>
+
+### 5주차 완전탐색,그리디,백트래킹 문제
+<details>
+<summary>문제</summary>
+  
+1931 회의실 배정https://www.acmicpc.net/problem/1931
+
+9663 NQueen https://www.acmicpc.net/problem/9663
+
+1987 알파벳 https://www.acmicpc.net/problem/1987
+
+1715 카드 정렬하기 https://www.acmicpc.net/problem/1715
+
+1038 감소하는수 https://www.acmicpc.net/problem/1038
+
+22856 트리순회 https://www.acmicpc.net/problem/22856
+
+16953 A->B https://www.acmicpc.net/problem/16953
+</details>
