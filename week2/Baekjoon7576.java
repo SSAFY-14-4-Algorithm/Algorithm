@@ -1,3 +1,5 @@
+package week2;
+
 import java.util.*;
 import java.io.*;
 
