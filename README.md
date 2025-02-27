@@ -70,14 +70,14 @@
 <details>
 <summary>문제</summary>
 
-| 번호  | 사이트 | 문제                                                   | 난이도  |
-| ----- | ------ | ------------------------------------------------------ | ------- |
-| 16953 | 백준   | [ A->B](https://www.acmicpc.net/problem/16953)         | 실버II  |
-| 1038  | 백준   | [ 감소하는수](https://www.acmicpc.net/problem/1038)    | 골드 V  |
-| 1931  | 백준   | [회의실 배정](https://www.acmicpc.net/problem/1931)    | 골드 V  |
-| 1715  | 백준   | [ 카드 정렬하기](https://www.acmicpc.net/problem/1715) | 골드 IV |
-| 1987  | 백준   | [ 알파벳](https://www.acmicpc.net/problem/1987)        | 골드 IV |
-| 9663  | 백준   | [ NQueen](https://www.acmicpc.net/problem/9663)        | 골드 IV |
-| 22856 | 백준   | [ 트리순회](https://www.acmicpc.net/problem/22856)     | 골드 IV |
+| 번호  | 사이트 | 문제                                                  | 난이도  |
+| ----- | ------ | ----------------------------------------------------- | ------- |
+| 16953 | 백준   | [A->B](https://www.acmicpc.net/problem/16953)         | 실버II  |
+| 1038  | 백준   | [감소하는수](https://www.acmicpc.net/problem/1038)    | 골드 V  |
+| 1931  | 백준   | [회의실 배정](https://www.acmicpc.net/problem/1931)   | 골드 V  |
+| 1715  | 백준   | [카드 정렬하기](https://www.acmicpc.net/problem/1715) | 골드 IV |
+| 1987  | 백준   | [알파벳](https://www.acmicpc.net/problem/1987)        | 골드 IV |
+| 9663  | 백준   | [NQueen](https://www.acmicpc.net/problem/9663)        | 골드 IV |
+| 22856 | 백준   | [트리순회](https://www.acmicpc.net/problem/22856)     | 골드 IV |
 
 </details>
