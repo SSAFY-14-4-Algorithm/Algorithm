@@ -81,3 +81,20 @@
 | 22856 | 백준   | [트리순회](https://www.acmicpc.net/problem/22856)     | 골드 IV |
 
 </details>
+
+
+### 6주차 분할정복,그래프 탐색,위상 정렬 문제
+
+<details>
+<summary>문제</summary>
+
+| 번호  | 사이트 | 문제                                                  | 난이도  |
+| ----- | ------ | ----------------------------------------------------- | ------- |
+| 13171 | 백준   | [A](https://www.acmicpc.net/problem/13171)            | 실버III  |
+| 17070  | 백준   | [파이프 옮기기1](https://www.acmicpc.net/problem/17070) | 골드 V  |
+| 10830  | 백준   | [행렬 제곱](https://www.acmicpc.net/problem/10830)     | 골드 IV  |
+| 1967  | 백준   | [트리의 지름](https://www.acmicpc.net/problem/1967)     | 골드 IV |
+| 2206  | 백준   | [벽 부수고 이동하기](https://www.acmicpc.net/problem/2206)  | 골드 III |
+| 2623  | 백준   | [음악프로그램](https://www.acmicpc.net/problem/2623)        | 골드 III |
+
+</details>
