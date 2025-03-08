@@ -1,6 +1,8 @@
 import java.util.*;
 import java.io.*;
-
+/*
+ * 41788kb,	428ms
+ */
 public class Baekjoon1931 {
 	
 	public static class Node{

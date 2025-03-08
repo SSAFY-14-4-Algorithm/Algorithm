@@ -1,6 +1,10 @@
 import java.io.*;
 import java.util.*;
 
+//그리디
+/*
+ *	14116kb, 104ms
+ */
 public class Baekjoon16953 {
 	public static void main(String[] args) throws IOException {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
@@ -28,6 +32,7 @@ public class Baekjoon16953 {
 }
 
 //BFS 풀이
+//15920kb, 120ms
 //public class Main {
 //	public static class Node {
 //		long x;

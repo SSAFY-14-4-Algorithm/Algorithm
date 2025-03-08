@@ -1,33 +1,16 @@
 import java.io.*;
 import java.util.*;
-
+/*
+ * 	44684KB, 344ms
+ */
+//전체 간선수 *2 - (루트에서 마지막 노드까지의 간선 수)
 public class Baekjoon22856 {
-	static int[][] tree;
-	static int answer;
-	static int cnt;
-	public static boolean inorder(int node) {
-		if(node > 0) {
-			if(inorder(tree[node][0])) {
-				cnt += 1;
-			}
-			answer = cnt;
-			cnt += 1;
-			if(inorder(tree[node][1])) {
-				cnt += 1;
-			}
-			return true;
-		} else {
-			return false;
-		}
-	}
-	
-	
 	public static void main(String[] args) throws IOException {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		int N = Integer.parseInt(br.readLine());
 		StringTokenizer st;
-		tree = new int[N+1][2];
-		
+		int[][] tree = new int[N+1][2];
+		int answer = 0;
 		for(int i = 0; i < N; i++) {
 			st = new StringTokenizer(br.readLine());
 			int p = Integer.parseInt(st.nextToken());
@@ -35,16 +18,72 @@ public class Baekjoon22856 {
 			int r = Integer.parseInt(st.nextToken());
 			tree[p][0] = l;
 			tree[p][1] = r;
+			answer += l != -1 ? 1 : 0;
+			answer += r != -1 ? 1 : 0;
 		}
-		answer = 0;
-		cnt = 0;
-		inorder(1);
+		answer *= 2;
+		answer++;
+		int node = 1;
+		while(node != -1) {
+			answer--;
+			node = tree[node][1];
+		}
 		System.out.println(answer);
 	}
 }
 
-//LCA 알고리즘 활용
+//중위순회
+//47300KB, 348ms
+//import java.io.*;
+//import java.util.*;
 //
+//public class Main {
+//	static int[][] tree;
+//	static int answer;
+//	static int cnt;
+//	public static boolean inorder(int node) {
+//		if(node > 0) {
+//			if(inorder(tree[node][0])) {
+//				cnt += 1;
+//			}
+//			answer = cnt;
+//			cnt += 1;
+//			if(inorder(tree[node][1])) {
+//				cnt += 1;
+//			}
+//			return true;
+//		} else {
+//			return false;
+//		}
+//	}
+//	
+//	
+//	public static void main(String[] args) throws IOException {
+//		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+//		int N = Integer.parseInt(br.readLine());
+//		StringTokenizer st;
+//		tree = new int[N+1][2];
+//		
+//		for(int i = 0; i < N; i++) {
+//			st = new StringTokenizer(br.readLine());
+//			int p = Integer.parseInt(st.nextToken());
+//			int l = Integer.parseInt(st.nextToken());
+//			int r = Integer.parseInt(st.nextToken());
+//			tree[p][0] = l;
+//			tree[p][1] = r;
+//		}
+//		answer = 0;
+//		cnt = 0;
+//		inorder(1);
+//		System.out.println(answer);
+//	}
+//}
+
+
+
+
+//LCA 알고리즘 활용
+//58600KB, 432ms
 //public class Main {
 //	static int[][] tree;
 //	static int[] order;

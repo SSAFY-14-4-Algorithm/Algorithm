@@ -1,6 +1,7 @@
 import java.io.*;
 import java.util.*;
 
+//26228kb, 	320ms
 public class Baekjoon1715 {
 	
 	public static void main(String[] args) throws IOException {
