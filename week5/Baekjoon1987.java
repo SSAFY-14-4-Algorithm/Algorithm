@@ -1,4 +1,5 @@
 import java.io.IOException;
+//JAVA8 12156KB	132ms
 
 public class Baekjoon1987 {
     private static final int[] dx = { 1, -1, 0, 0 };
