@@ -3,6 +3,10 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.StringTokenizer;
 
+
+//메모리 14168kb
+//시간 104ms
+
 public class Main {
   static int result=-1;
   static boolean check;
