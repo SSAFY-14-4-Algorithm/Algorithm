@@ -1,6 +1,7 @@
 import java.io.IOException;
 
-//JAVA11  14832KB	120ms
+//JAVA8  14832KB	120ms
+//JAVA11 17100KB	148ms
 public class Baekjoon22856 {
     private static class Node {
         Node left, right;
