@@ -8,6 +8,8 @@ import java.util.Comparator;
 import java.util.List;
 import java.util.StringTokenizer;
 
+//시간 492ms
+// 43720kb
 public class Main {
   static class Node{
     int start;
