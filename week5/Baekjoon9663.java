@@ -2,6 +2,8 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
+//숏코딩 JAVA11 14152KB	100ms
+//dfs JAVA11 14844KB	2496ms
 public class Baekjoon9663 {
     public static int N;
     public static int count = 0;
