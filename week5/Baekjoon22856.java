@@ -12,7 +12,10 @@ public class Main {
 
     static Node[] tree;
     static boolean[] visited;
-    static int moveCount = 0, lastNode = 0, visitedCount = 0, N;
+    static int moveCount = 0;
+    static int lastNode = 0;
+    static int visitedCount = 0;
+    static int N;
 
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
