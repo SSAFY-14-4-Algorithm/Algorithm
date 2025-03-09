@@ -1,5 +1,6 @@
 import java.io.IOException;
 
+//JAVA11  14832KB	120ms
 public class Baekjoon22856 {
     private static class Node {
         Node left, right;
