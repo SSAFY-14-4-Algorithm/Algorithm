@@ -5,6 +5,9 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
+//시간 132ms
+//메모리 16212ms
+
 public class Main {
 
   static List<Long> list = new ArrayList<>();
