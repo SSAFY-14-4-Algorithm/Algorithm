@@ -7,7 +7,7 @@ import java.util.*;
  * 
  */
 
-public class 2206{
+public class Baekjoon2206{
 	static class Node{
 		int x;
 		int y;
