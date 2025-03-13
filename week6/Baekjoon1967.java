@@ -4,7 +4,7 @@ import java.util.*;
  * 메모리: 22640KB
  * 시간: 192ms
  */
-public class 1967{
+public class Baekjoon1967{
 	static int n;
 	static List<Node>[] tree;
 	static boolean[] visited;
