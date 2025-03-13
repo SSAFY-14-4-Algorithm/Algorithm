@@ -98,3 +98,19 @@
 | 2623  | 백준   | [음악프로그램](https://www.acmicpc.net/problem/2623)        | 골드 III |
 
 </details>
+
+### 7주차 DP 기본 문제
+
+<details>
+<summary>문제</summary>
+
+| 번호  | 사이트 | 문제                                                  | 난이도  |
+| ----- | ------ | ----------------------------------------------------- | ------- |
+| 2579  | 백준   | [계단오르기](https://www.acmicpc.net/problem/2579)     | 실버III  |
+| 1912  | 백준   | [연속합](https://www.acmicpc.net/problem/1912)         | 실버 II  |
+| 11053 | 백준   | [가장 긴 증가하는 부분 수열](https://www.acmicpc.net/problem/11053)     | 실버 II  |
+| 13398 | 백준   | [연속합 2](https://www.acmicpc.net/problem/13398)       | 골드 V |
+| 1520  | 백준   | [내리막 길](https://www.acmicpc.net/problem/1520)      | 골드 III |
+
+
+</details>
