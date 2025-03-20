@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /*
  * BOJ 17070번 : 파이프 옮기기 1
  * 메모리 : 13,736kb
@@ -56,5 +57,12 @@ public class Baekjoon17070 {
 		if(x+1 <= N && y+1 <= N && map[x+1][y+1] == 0 && map[x][y+1] == 0 && map[x+1][y] == 0) {
 			dfs(x+1, y+1, 2);
 		}
+=======
+
+public class Main {
+
+	public static void main(String[] args) {
+		
+>>>>>>> f8a4cc1b59636f9b772aeea870b91b29b6c5c533
 	}
 }

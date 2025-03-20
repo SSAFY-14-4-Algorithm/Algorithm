@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /*
  * BOJ 2623번 : 음악 프로그램
  * 메모리 : 12,272kb
@@ -70,4 +71,12 @@ public class Baekjoon2623 {
 		
 		br.close();
 	}	
+=======
+
+public class Main {
+
+	public static void main(String[] args) {
+		
+	}
+>>>>>>> f8a4cc1b59636f9b772aeea870b91b29b6c5c533
 }

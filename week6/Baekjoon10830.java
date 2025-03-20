@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /*
  * BOJ 10830번 : 행렬 제곱
  * 메모리 : 11,560kb
@@ -72,3 +73,12 @@ public class Baekjoon10830 {
 		return temp;
 	}
 }
+=======
+
+public class Main {
+
+	public static void main(String[] args) {
+		
+	}
+}
+>>>>>>> f8a4cc1b59636f9b772aeea870b91b29b6c5c533

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /*
  * BOJ 13171번 : A
  * 메모리 : 11,520kb
@@ -36,5 +37,12 @@ public class Baekjoon13171 {
 		} else {
 			return (A*squared) % MOD;
 		}
+=======
+
+public class Main {
+
+	public static void main(String[] args) {
+		
+>>>>>>> f8a4cc1b59636f9b772aeea870b91b29b6c5c533
 	}
 }

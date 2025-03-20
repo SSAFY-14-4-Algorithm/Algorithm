@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /*
  * BOJ 1967번 : 트리의 지름
  * 메모리 : 19,804kb
@@ -76,3 +77,12 @@ public class Baekjoon1967 {
 	   }
    }
 }
+=======
+
+public class Main {
+
+	public static void main(String[] args) {
+		
+	}
+}
+>>>>>>> f8a4cc1b59636f9b772aeea870b91b29b6c5c533

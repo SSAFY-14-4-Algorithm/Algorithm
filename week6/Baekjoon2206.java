@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /*
  * BOJ 2206번 : 벽 부수고 이동하기
  * 메모리 : 107,248kb
@@ -81,4 +82,12 @@ public class Baekjoon2206 {
 			}
 		}
 	}		
+=======
+
+public class Main {
+
+	public static void main(String[] args) {
+		
+	}
+>>>>>>> f8a4cc1b59636f9b772aeea870b91b29b6c5c533
 }
