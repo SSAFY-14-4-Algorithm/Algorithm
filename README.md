@@ -113,6 +113,21 @@
 | 13398 | 백준   | [연속합 2](https://www.acmicpc.net/problem/13398)       | 골드 V |
 | 1520  | 백준   | [강의실 배정](https://www.acmicpc.net/problem/11000)      | 골드 V |
 
+</details>
+
+### 8주차 완전탐색,백트래킹,조합론,플루이드-워셜 문제
+
+<details>
+<summary>문제</summary>
+
+| 번호  | 사이트 | 문제                                                  | 난이도  |
+| ----- | ------ | ----------------------------------------------------- | ------- |
+| 25624  | 백준   | [SNUPTI](https://www.acmicpc.net/problem/25624)     | 실버III  |
+| 6603   | 백준   | [로또](https://www.acmicpc.net/problem/6603)           | 실버 II  |
+| 14888  | 백준   | [연산자 끼워넣기](https://www.acmicpc.net/problem/14888)  | 실버 I  |
+| 1956   | 백준   | [운동](https://www.acmicpc.net/problem/1956)             | 골드 IV |
+| 16234  | 백준   | [인구 이동](https://www.acmicpc.net/problem/16234)      | 골드 IV |
+
 
 </details>
 
