@@ -138,7 +138,7 @@
 | 번호  | 사이트 | 문제                                                  | 난이도  |
 | ----- | ------ | ----------------------------------------------------- | ------- |
 | 1138  | 백준   | [한 줄로 서기](https://www.acmicpc.net/problem/1138)    | 실버II  |
-| 1522   | 백준   | [문자열 교환](https://www.acmicpc.net/problem/1522)    | 실버 I  |
+| 1535   | 백준   | [안녕](https://www.acmicpc.net/problem/1535)          | 실버 II  |
 | 14500  | 백준   | [테트로미노](https://www.acmicpc.net/problem/14500)    | 골드 IV  |
 | 1976   | 백준   | [여행 가자](https://www.acmicpc.net/problem/1976)      | 골드 IV |
 | 1647  | 백준   | [도시 분할 계획](https://www.acmicpc.net/problem/1647)   | 골드 IV |
