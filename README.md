@@ -128,6 +128,7 @@
 | 1956   | 백준   | [운동](https://www.acmicpc.net/problem/1956)             | 골드 IV |
 | 16234  | 백준   | [인구 이동](https://www.acmicpc.net/problem/16234)      | 골드 IV |
 
+</details>
 
 ### 9주차 유니온파인드,MST,기업 코테 문제
 
