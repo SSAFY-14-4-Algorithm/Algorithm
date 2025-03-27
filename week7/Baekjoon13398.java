@@ -1,54 +1,36 @@
-/*
- * BOJ 13398번 : 연속합2
- * 메모리 : 26,308kb
- * 시간 : 212ms
- * 
- * 연속된 수 선택해서 가장 큰 합 구하기 
- * 수열에서 수 하나 제거 가능 (제거 안해도 됨)
- * 
- * 제거X : 그냥 연속합 
- * dp[n] = Math.max(arr[n], dp[n-1]+arr[n])
- * 
- * 제거O : 이전에 수 제거한 상태+arr[n], 지금 arr[n] 제거 
- * dpRemove[n] = Math.max(dpRemove[n-1]+arr[n], dp[n-1]);
- */
-
-package algorithm;
-
 import java.io.*;
 import java.util.*;
 
 public class Baekjoon13398 {
-	static int N;
-	static int[] arr;
-	static int[] dp;
-	static int[] dpRemove;
-	static int answer;
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        int n = Integer.parseInt(br.readLine());
+        int[] arr = new int[n];
+        StringTokenizer st = new StringTokenizer(br.readLine());
 
-	public static void main(String[] args) throws IOException {
-		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-		StringBuilder sb = new StringBuilder();
-		N = Integer.parseInt(br.readLine());
-		arr = new int[N];
-		StringTokenizer st = new StringTokenizer(br.readLine());
-		for(int n = 0; n < N; n++) {
-			arr[n] = Integer.parseInt(st.nextToken());
-		}
-		
-		dp = new int[N];
-		dpRemove = new int[N];
-		dp[0] = arr[0];
-		dpRemove[0] = arr[0];
-		answer = arr[0];
-		
-		for(int n = 1; n < N; n++) {
-			dp[n] = Math.max(arr[n], dp[n-1]+arr[n]);
-			dpRemove[n] = Math.max(dpRemove[n-1]+arr[n], dp[n-1]);
-			answer = Math.max(answer, Math.max(dp[n], dpRemove[n]));
-		}
-		
-		sb.append(answer);
-		System.out.print(sb);
-		br.close();
-	}
+        for (int i = 0; i < n; i++) {
+            arr[i] = Integer.parseInt(st.nextToken());
+        }
+
+        // dp[i][0]: i번째 요소까지의 최대 연속 합 (삭제 없음)
+        // dp[i][1]: i번째 요소까지의 최대 연속 합 (하나 삭제)
+        int[][] dp = new int[n][2];
+        dp[0][0] = arr[0];
+        dp[0][1] = 0; // 첫 번째 요소는 삭제하면 아무것도 남지 않음
+
+        int maxSum = arr[0];
+
+        for (int i = 1; i < n; i++) {
+            // 삭제하지 않은 경우 (기존 연속합 + 현재 값) vs (현재 값 단독)
+            dp[i][0] = Math.max(dp[i - 1][0] + arr[i], arr[i]);
+
+            // 삭제한 경우 (이전 삭제 안한 값에서 현재 값 제거) vs (이전 삭제한 값에서 이어가기)
+            dp[i][1] = Math.max(dp[i - 1][0], dp[i - 1][1] + arr[i]);
+
+            // 최대값 갱신
+            maxSum = Math.max(maxSum, Math.max(dp[i][0], dp[i][1]));
+        }
+
+        System.out.println(maxSum);
+    }
 }

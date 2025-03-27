@@ -108,10 +108,42 @@
 | 번호  | 사이트 | 문제                                                  | 난이도  |
 | ----- | ------ | ----------------------------------------------------- | ------- |
 | 2579  | 백준   | [계단오르기](https://www.acmicpc.net/problem/2579)     | 실버III  |
-| 1912  | 백준   | [연속합](https://www.acmicpc.net/problem/1912)         | 실버 II  |
 | 11053 | 백준   | [가장 긴 증가하는 부분 수열](https://www.acmicpc.net/problem/11053)     | 실버 II  |
+| 1912  | 백준   | [지름길](https://www.acmicpc.net/problem/1446)         | 실버 I  |
 | 13398 | 백준   | [연속합 2](https://www.acmicpc.net/problem/13398)       | 골드 V |
-| 1520  | 백준   | [내리막 길](https://www.acmicpc.net/problem/1520)      | 골드 III |
+| 1520  | 백준   | [강의실 배정](https://www.acmicpc.net/problem/11000)      | 골드 V |
+
+</details>
+
+### 8주차 완전탐색,백트래킹,조합론,플루이드-워셜 문제
+
+<details>
+<summary>문제</summary>
+
+| 번호  | 사이트 | 문제                                                  | 난이도  |
+| ----- | ------ | ----------------------------------------------------- | ------- |
+| 25624  | 백준   | [SNUPTI](https://www.acmicpc.net/problem/25624)     | 실버III  |
+| 6603   | 백준   | [로또](https://www.acmicpc.net/problem/6603)           | 실버 II  |
+| 14888  | 백준   | [연산자 끼워넣기](https://www.acmicpc.net/problem/14888)  | 실버 I  |
+| 1956   | 백준   | [운동](https://www.acmicpc.net/problem/1956)             | 골드 IV |
+| 16234  | 백준   | [인구 이동](https://www.acmicpc.net/problem/16234)      | 골드 IV |
+
+</details>
+
+### 9주차 유니온파인드,MST,기업 코테 문제
+
+<details>
+<summary>문제</summary>
+
+| 번호  | 사이트 | 문제                                                  | 난이도  |
+| ----- | ------ | ----------------------------------------------------- | ------- |
+| 1138  | 백준   | [한 줄로 서기](https://www.acmicpc.net/problem/1138)    | 실버II  |
+| 1535   | 백준   | [안녕](https://www.acmicpc.net/problem/1535)          | 실버 II  |
+| 14500  | 백준   | [테트로미노](https://www.acmicpc.net/problem/14500)    | 골드 IV  |
+| 1976   | 백준   | [여행 가자](https://www.acmicpc.net/problem/1976)      | 골드 IV |
+| 1647  | 백준   | [도시 분할 계획](https://www.acmicpc.net/problem/1647)   | 골드 IV |
 
 
 </details>
+
+
