@@ -1,5 +1,13 @@
 package week8;
 
+/**
+ * <h1>BAEKJOON 16234번 인구 이동 GOLD IV</h1>
+ * <p>
+ * JAVA11 : 메모리 296,288 KB 시간 472ms
+ * </p>
+ * 
+ * @author KIM MINGYU jun3021303@gmail.com
+ */
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;

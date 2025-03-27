@@ -1,5 +1,14 @@
 package week8;
 
+/**
+ * <h1>BAEKJOON 25624번 SNUPTI SILVER III</h1>
+ * <p>
+ * JAVA11 : 메모리 18,588 KB 시간 136ms
+ * </p>
+ * 
+ * @author KIM MINGYU jun3021303@gmail.com
+ */
+
 import java.io.IOException;
 import java.util.HashSet;
 import java.util.Set;

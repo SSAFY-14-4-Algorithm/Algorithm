@@ -1,5 +1,14 @@
 package week8;
 
+/**
+ * <h1>BAEKJOON 6603번 로또 SILVER II</h1>
+ * <p>
+ * JAVA11 : 메모리 14,288 KB 시간 112ms
+ * </p>
+ * 
+ * @author KIM MINGYU jun3021303@gmail.com
+ */
+
 import java.io.IOException;
 
 public class Baekjoon6603 {

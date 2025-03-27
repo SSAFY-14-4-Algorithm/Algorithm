@@ -1,5 +1,13 @@
 package week8;
 
+/**
+ * <h1>BAEKJOON 14888번 연산자 끼워넣기 SILVER I</h1>
+ * <p>
+ * JAVA11 : 메모리 15,816 KB 시간 108ms
+ * </p>
+ * 
+ * @author KIM MINGYU jun3021303@gmail.com
+ */
 import java.io.IOException;
 
 public class Baekjoon14888 {
