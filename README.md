@@ -74,7 +74,7 @@
 
 | 번호  | 사이트 | 문제                                                  | 난이도  |
 | ----- | ------ | ----------------------------------------------------- | ------- |
-| 16953 | 백준   | [A->B](https://www.acmicpc.net/problem/16953)         | 실버II  |
+| 16953 | 백준   | [A->B](https://www.acmicpc.net/problem/16953)         | 실버 II  |
 | 1038  | 백준   | [감소하는수](https://www.acmicpc.net/problem/1038)    | 골드 V  |
 | 1931  | 백준   | [회의실 배정](https://www.acmicpc.net/problem/1931)   | 골드 V  |
 | 1715  | 백준   | [카드 정렬하기](https://www.acmicpc.net/problem/1715) | 골드 IV |
@@ -91,7 +91,7 @@
 
 | 번호  | 사이트 | 문제                                                       | 난이도   |
 | ----- | ------ | ---------------------------------------------------------- | -------- |
-| 13171 | 백준   | [A](https://www.acmicpc.net/problem/13171)                 | 실버III  |
+| 13171 | 백준   | [A](https://www.acmicpc.net/problem/13171)                 | 실버 III  |
 | 17070 | 백준   | [파이프 옮기기1](https://www.acmicpc.net/problem/17070)    | 골드 V   |
 | 10830 | 백준   | [행렬 제곱](https://www.acmicpc.net/problem/10830)         | 골드 IV  |
 | 1967  | 백준   | [트리의 지름](https://www.acmicpc.net/problem/1967)        | 골드 IV  |
@@ -107,7 +107,7 @@
 
 | 번호  | 사이트 | 문제                                                                | 난이도  |
 | ----- | ------ | ------------------------------------------------------------------- | ------- |
-| 2579  | 백준   | [계단오르기](https://www.acmicpc.net/problem/2579)                  | 실버III |
+| 2579  | 백준   | [계단오르기](https://www.acmicpc.net/problem/2579)                  | 실버 III |
 | 11053 | 백준   | [가장 긴 증가하는 부분 수열](https://www.acmicpc.net/problem/11053) | 실버 II |
 | 1912  | 백준   | [지름길](https://www.acmicpc.net/problem/1446)                      | 실버 I  |
 | 13398 | 백준   | [연속합 2](https://www.acmicpc.net/problem/13398)                   | 골드 V  |
@@ -122,7 +122,7 @@
 
 | 번호  | 사이트 | 문제                                                     | 난이도  |
 | ----- | ------ | -------------------------------------------------------- | ------- |
-| 25624 | 백준   | [SNUPTI](https://www.acmicpc.net/problem/25624)          | 실버III |
+| 25624 | 백준   | [SNUPTI](https://www.acmicpc.net/problem/25624)          | 실버 III |
 | 6603  | 백준   | [로또](https://www.acmicpc.net/problem/6603)             | 실버 II |
 | 14888 | 백준   | [연산자 끼워넣기](https://www.acmicpc.net/problem/14888) | 실버 I  |
 | 1956  | 백준   | [운동](https://www.acmicpc.net/problem/1956)             | 골드 IV |
@@ -137,7 +137,7 @@
 
 | 번호  | 사이트 | 문제                                                   | 난이도   |
 | ----- | ------ | ------------------------------------------------------ | -------- |
-| 1138  | 백준   | [한 줄로 서기](https://www.acmicpc.net/problem/1138)   | 실버II   |
+| 1138  | 백준   | [한 줄로 서기](https://www.acmicpc.net/problem/1138)   | 실버 II   |
 | 1535  | 백준   | [안녕](https://www.acmicpc.net/problem/1535)           | 실버 II  |
 | 14500 | 백준   | [테트로미노](https://www.acmicpc.net/problem/14500)    | 골드 IV  |
 | 1976  | 백준   | [여행 가자](https://www.acmicpc.net/problem/1976)      | 골드 IV  |
