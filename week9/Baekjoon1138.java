@@ -1,60 +1,43 @@
-import java.io.*;
-import java.util.Arrays;
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
 
-public class Baekjoon1956 {
+public class Baekjoon1138 {
     private static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
     private static BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
-    private static final int MAX = 987654321;
-    private static int V, E;
-    private static int[][] cost;
+
+    private static int N;
+    private static int [] line;
 
     public static void main(String[] args) throws IOException {
-        String[] tokens = br.readLine().split(" ");
-        V = Integer.parseInt(tokens[0]);
-        E = Integer.parseInt(tokens[1]);
-        cost = new int[V + 1][V + 1];
+        N = Integer.parseInt(br.readLine());
+        line = new int[N];
 
-        // 초기화
-        for (int i = 1; i <= V; i++) {
-            Arrays.fill(cost[i], MAX);
-            cost[i][i] = 0;
-        }
+        String [] tokens = br.readLine().split(" ");
+        for(int i=0;i<N;i++){
+            int count = Integer.parseInt(tokens[i]);
 
-        // 간선 정보 입력
-        for (int i = 0; i < E; i++) {
-            tokens = br.readLine().split(" ");
-            int a = Integer.parseInt(tokens[0]);
-            int b = Integer.parseInt(tokens[1]);
-            int c = Integer.parseInt(tokens[2]);
-
-            cost[a][b] = c;
-        }
-
-        // 플로이드-워셜 알고리즘
-        for (int k = 1; k <= V; k++) {
-            for (int i = 1; i <= V; i++) {
-                for (int j = 1; j <= V; j++) {
-                    if (cost[i][j] > cost[i][k] + cost[k][j]) {
-                        cost[i][j] = cost[i][k] + cost[k][j];
+            for(int j=0;j<N;j++){
+                //자신보다 큰 사람이 없는 경우
+                if(count == 0){
+                    if(line[j] == 0){
+                        line[j] = i+1;
+                        break;
+                    }else{
+                        continue;
                     }
+                }else if(line[j] == 0){
+                    //자신보다 큰 사람이 존재하는 경우...-> 다음 칸으로 이동
+                    count--;
                 }
             }
         }
 
-        // 최소 사이클 찾기
-        int ans = MAX;
-        for (int i = 1; i <= V; i++) {
-            for (int j = 1; j <= V; j++) {
-                if(i == j) continue;
-                if (cost[i][j] != MAX && cost[j][i] != MAX) {
-                    ans = Math.min(ans, cost[i][j] + cost[j][i]);
-                }
-            }
-        }
-
-        if (ans == MAX) bw.write("-1\n");
-        else bw.write(ans + "\n");
-
+        for(int i=0;i<N;i++){
+            bw.write(line[i]+" ");
+        }bw.write("\n");
         bw.flush();
         bw.close();
         br.close();
