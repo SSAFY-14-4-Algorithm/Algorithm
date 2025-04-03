@@ -154,7 +154,7 @@
 
 | 번호  | 사이트 | 문제                                                               | 난이도   |
 | ----- | ------ | ------------------------------------------------------------------ | -------- |
-| 11055 | 백준   | [가장 큰 증가하는 부분수열](https://www.acmicpc.net/problem/11055) | 실버II   |
+| 11055 | 백준   | [가장 큰 증가하는 부분수열](https://www.acmicpc.net/problem/11055) | 실버 II   |
 | 2607  | 백준   | [비슷한 단어](https://www.acmicpc.net/problem/2607)                | 실버 II  |
 | 15486 | 백준   | [퇴사2](https://www.acmicpc.net/problem/15486)                     | 골드 V   |
 | 13549 | 백준   | [숨바꼭질3](https://www.acmicpc.net/problem/13549)                 | 골드 V   |
