@@ -3,6 +3,7 @@
 ## 알고리즘 스터디
 
 [전체 코드 문제집](https://www.acmicpc.net/group/workbook/23041)
+
 ### 1주차 Stack,Queue
 
 <details>
@@ -83,20 +84,19 @@
 
 </details>
 
-
 ### 6주차 분할정복,그래프 탐색,위상 정렬 문제
 
 <details>
 <summary>문제</summary>
 
-| 번호  | 사이트 | 문제                                                  | 난이도  |
-| ----- | ------ | ----------------------------------------------------- | ------- |
-| 13171 | 백준   | [A](https://www.acmicpc.net/problem/13171)            | 실버III  |
-| 17070  | 백준   | [파이프 옮기기1](https://www.acmicpc.net/problem/17070) | 골드 V  |
-| 10830  | 백준   | [행렬 제곱](https://www.acmicpc.net/problem/10830)     | 골드 IV  |
-| 1967  | 백준   | [트리의 지름](https://www.acmicpc.net/problem/1967)     | 골드 IV |
-| 2206  | 백준   | [벽 부수고 이동하기](https://www.acmicpc.net/problem/2206)  | 골드 III |
-| 2623  | 백준   | [음악프로그램](https://www.acmicpc.net/problem/2623)        | 골드 III |
+| 번호  | 사이트 | 문제                                                       | 난이도   |
+| ----- | ------ | ---------------------------------------------------------- | -------- |
+| 13171 | 백준   | [A](https://www.acmicpc.net/problem/13171)                 | 실버III  |
+| 17070 | 백준   | [파이프 옮기기1](https://www.acmicpc.net/problem/17070)    | 골드 V   |
+| 10830 | 백준   | [행렬 제곱](https://www.acmicpc.net/problem/10830)         | 골드 IV  |
+| 1967  | 백준   | [트리의 지름](https://www.acmicpc.net/problem/1967)        | 골드 IV  |
+| 2206  | 백준   | [벽 부수고 이동하기](https://www.acmicpc.net/problem/2206) | 골드 III |
+| 2623  | 백준   | [음악프로그램](https://www.acmicpc.net/problem/2623)       | 골드 III |
 
 </details>
 
@@ -105,13 +105,13 @@
 <details>
 <summary>문제</summary>
 
-| 번호  | 사이트 | 문제                                                  | 난이도  |
-| ----- | ------ | ----------------------------------------------------- | ------- |
-| 2579  | 백준   | [계단오르기](https://www.acmicpc.net/problem/2579)     | 실버III  |
-| 11053 | 백준   | [가장 긴 증가하는 부분 수열](https://www.acmicpc.net/problem/11053)     | 실버 II  |
-| 1912  | 백준   | [지름길](https://www.acmicpc.net/problem/1446)         | 실버 I  |
-| 13398 | 백준   | [연속합 2](https://www.acmicpc.net/problem/13398)       | 골드 V |
-| 1520  | 백준   | [강의실 배정](https://www.acmicpc.net/problem/11000)      | 골드 V |
+| 번호  | 사이트 | 문제                                                                | 난이도  |
+| ----- | ------ | ------------------------------------------------------------------- | ------- |
+| 2579  | 백준   | [계단오르기](https://www.acmicpc.net/problem/2579)                  | 실버III |
+| 11053 | 백준   | [가장 긴 증가하는 부분 수열](https://www.acmicpc.net/problem/11053) | 실버 II |
+| 1912  | 백준   | [지름길](https://www.acmicpc.net/problem/1446)                      | 실버 I  |
+| 13398 | 백준   | [연속합 2](https://www.acmicpc.net/problem/13398)                   | 골드 V  |
+| 1520  | 백준   | [강의실 배정](https://www.acmicpc.net/problem/11000)                | 골드 V  |
 
 </details>
 
@@ -120,13 +120,13 @@
 <details>
 <summary>문제</summary>
 
-| 번호  | 사이트 | 문제                                                  | 난이도  |
-| ----- | ------ | ----------------------------------------------------- | ------- |
-| 25624  | 백준   | [SNUPTI](https://www.acmicpc.net/problem/25624)     | 실버III  |
-| 6603   | 백준   | [로또](https://www.acmicpc.net/problem/6603)           | 실버 II  |
-| 14888  | 백준   | [연산자 끼워넣기](https://www.acmicpc.net/problem/14888)  | 실버 I  |
-| 1956   | 백준   | [운동](https://www.acmicpc.net/problem/1956)             | 골드 IV |
-| 16234  | 백준   | [인구 이동](https://www.acmicpc.net/problem/16234)      | 골드 IV |
+| 번호  | 사이트 | 문제                                                     | 난이도  |
+| ----- | ------ | -------------------------------------------------------- | ------- |
+| 25624 | 백준   | [SNUPTI](https://www.acmicpc.net/problem/25624)          | 실버III |
+| 6603  | 백준   | [로또](https://www.acmicpc.net/problem/6603)             | 실버 II |
+| 14888 | 백준   | [연산자 끼워넣기](https://www.acmicpc.net/problem/14888) | 실버 I  |
+| 1956  | 백준   | [운동](https://www.acmicpc.net/problem/1956)             | 골드 IV |
+| 16234 | 백준   | [인구 이동](https://www.acmicpc.net/problem/16234)       | 골드 IV |
 
 </details>
 
@@ -135,15 +135,31 @@
 <details>
 <summary>문제</summary>
 
-| 번호  | 사이트 | 문제                                                  | 난이도  |
-| ----- | ------ | ----------------------------------------------------- | ------- |
-| 1138  | 백준   | [한 줄로 서기](https://www.acmicpc.net/problem/1138)    | 실버II  |
-| 1535   | 백준   | [안녕](https://www.acmicpc.net/problem/1535)          | 실버 II  |
-| 14500  | 백준   | [테트로미노](https://www.acmicpc.net/problem/14500)    | 골드 IV  |
-| 1976   | 백준   | [여행 가자](https://www.acmicpc.net/problem/1976)      | 골드 IV |
-| 1647  | 백준   | [도시 분할 계획](https://www.acmicpc.net/problem/1647)   | 골드 IV |
-
+| 번호  | 사이트 | 문제                                                   | 난이도   |
+| ----- | ------ | ------------------------------------------------------ | -------- |
+| 1138  | 백준   | [한 줄로 서기](https://www.acmicpc.net/problem/1138)   | 실버II   |
+| 1535  | 백준   | [안녕](https://www.acmicpc.net/problem/1535)           | 실버 II  |
+| 14500 | 백준   | [테트로미노](https://www.acmicpc.net/problem/14500)    | 골드 IV  |
+| 1976  | 백준   | [여행 가자](https://www.acmicpc.net/problem/1976)      | 골드 IV  |
+| 1647  | 백준   | [도시 분할 계획](https://www.acmicpc.net/problem/1647) | 골드 IV  |
+| 13418 | 백준   | [학교 탐방하기](https://www.acmicpc.net/problem/13418) | 골드 III |
+| 4195  | 백준   | [친구 네트워크](https://www.acmicpc.net/problem/4195)  | 골드 II  |
 
 </details>
 
+### 10주차 최단경로,DP,기업 코테 기출 문제
 
+<details>
+<summary>문제</summary>
+
+| 번호  | 사이트 | 문제                                                               | 난이도   |
+| ----- | ------ | ------------------------------------------------------------------ | -------- |
+| 11055 | 백준   | [가장 큰 증가하는 부분수열](https://www.acmicpc.net/problem/11055) | 실버II   |
+| 2607  | 백준   | [비슷한 단어](https://www.acmicpc.net/problem/2607)                | 실버 II  |
+| 15486 | 백준   | [퇴사2](https://www.acmicpc.net/problem/15486)                     | 골드 V   |
+| 13549 | 백준   | [숨바꼭질3](https://www.acmicpc.net/problem/13549)                 | 골드 V   |
+| 9084  | 백준   | [동전](https://www.acmicpc.net/problem/9084)                       | 골드 V   |
+| 11657 | 백준   | [타임머신](https://www.acmicpc.net/problem/11657)                  | 골드 IV  |
+| 1238  | 백준   | [파티티](https://www.acmicpc.net/problem/1238)                     | 골드 III |
+
+</details>
