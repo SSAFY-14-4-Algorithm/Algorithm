@@ -20,7 +20,7 @@ public class Baekjoon9084 {
 			int[] dp = new int[K+1];
 			dp[0] = 1;
 			for(int i = 0; i < N; i++) {
-                int target = coins[i];
+               			int target = coins[i];
 				for(int j = target; j <= K; j++) {
 					dp[j] += dp[j-target];
 				}
