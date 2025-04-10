@@ -1,125 +1,71 @@
-
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.util.StringTokenizer;
-
-/**
+import java.io.*;
+import java.util.*;
+/*
+ * 메모리: 17240KB
+ * 시간: 252ms
  * 
- * 각 지점을 중심으로 dfs 아래, 왼쪽, 오른쪽 방향으로만 dfs 탐색 depth:4로
- * 	- 탐색 시 최대값을 발견한다면 갱신
- * 탐색한 지점은 방문 처리
+ * 도시N,노선 M
+ * 노선: 출발도시, 도착도시,소요시간
+ * 도시 이동의 최단 시간을 순서대로 출력 
  * 
- * 
- * 
- * 가운데 모양은 따로 탐색 필요
- * 
- * 
- * @author SSAFY
- *
+ * 벨만포드
+ * 1번 도시에서 시작  -> 1번에 연결된 도시들 갱신 -> 갱신된 도시 기반으로 그 도시에 연결된 도시들 또 갱신-> 계속 반복 
  */
-public class Main_B_14500_테트로미노_연민호 {
+public class Main {
 	
-	//하좌우상
-	final static int[] dr = {1, 0, 0, -1};
-	final static int[] dc = {0, -1, 1, 0};
-	
-	
-	
-	static int N;	//세로 크기
-	static int M;	//가로 크기
-	
-	static int[][] map;	//숫자판 정보
-	
-	static boolean[][] visited;	//방문체크
-	
-	static int max;	//최댓값
-	
-	public static void main(String[] args) throws IOException {
-		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-		
-		StringTokenizer st = new StringTokenizer(br.readLine());
-		
-		N = Integer.parseInt(st.nextToken());
-		M = Integer.parseInt(st.nextToken());
-		
-		//탐색의 편이를 위해 공백을 넣어놓음
-		map = new int[N+2][M+2];
-		for(int i=1; i<=N; i++) {
-			st = new StringTokenizer(br.readLine());
-			for(int j=1; j<=M; j++) {
-				map[i][j] = Integer.parseInt(st.nextToken());
-			}
-		}
-		
-		
-		visited = new boolean[N+2][M+2];
-		
-		
-		for(int i=1; i<=N; i++) {
-			for(int j=1; j<=M; j++) {
-				visited[i][j] = true;
-				dfs(i,j, map[i][j], 1);
-				visited[i][j] = false;
-				
-				//가운데 블록 기준 3개 블록이 붙어있는 테트로미노 탐색
-				etc(i, j, map[i][j]);
-			}
-		}
-		
-		System.out.println(max);
-	}
+    static class Edge { //출발,도착, 소요시간 
+        int from, to, time;
+        public Edge(int from, int to, int cost) {
+            this.from = from;
+            this.to = to;
+            this.time = cost;
+        }
+    }
+    static final long max = Long.MAX_VALUE;
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        StringTokenizer st = new StringTokenizer(br.readLine());
+        int N = Integer.parseInt(st.nextToken()); 
+        int M = Integer.parseInt(st.nextToken()); 
 
-	//가운데 블록 기준 3개 블록이 붙어있는 테트로미노 탐색
-	private static void etc(int r, int c, int sum) {
-		
-		//(r,c) 기준 4방의 값을 모두 더함
-		for(int d=0; d<4; d++) {
-			int nr = r+dr[d];
-			int nc = c+dc[d];
-			sum+= map[nr][nc];
-		}
-		
-		//4방의 값을 하나씩 빼보면서 해당 값이 최댓값이라면 갱신
-		for(int d=0; d<4; d++) {
-			int nr = r+dr[d];
-			int nc = c+dc[d];
-			max = Math.max(max, sum-map[nr][nc]);
-		}
-	}
+        List<Edge> edges = new ArrayList<>();
+        for (int i = 0; i < M; i++) {
+            st = new StringTokenizer(br.readLine());
+            int from = Integer.parseInt(st.nextToken());
+            int to = Integer.parseInt(st.nextToken());
+            int time = Integer.parseInt(st.nextToken());
+            edges.add(new Edge(from, to, time));
+        }
 
-	/**
-	 * 블록하나를 선택하고 다음 블록 선택은 재귀호출로 넘김
-	 * @param r
-	 * @param c
-	 * @param sum	//선택한 블록의 숫자 합
-	 * @param cnt	//선택한 블록의 개수
-	 */
-	private static void dfs(int r, int c, int sum, int cnt) {
+        long[] minTime = new long[N + 1]; //1번 도시부터 각 도시까지 가는데 걸리는 최소시간 
+        Arrays.fill(minTime, max);
+        minTime[1] = 0; 
+        for (int i = 1; i < N; i++) {
+            for (Edge e : edges) {
+                if ((minTime[e.from] != max) && (minTime[e.to] > minTime[e.from] + e.time)) { //출발도시까지 최소 시간 계산 된 상황 && 새 경로가 더 빠르면 >> 갱신  
+                    minTime[e.to] = minTime[e.from] + e.time;
+                }
+            }
+        }
 
-		//step01. 4개의 블록 선택 완료
-		if(cnt==4) {
-			//step 02. 선택한 블록 숫자의 합이 최댓값이라면 갱신
-			max = Math.max(sum, max);
-			return;
-		}
-		
-		//윗 방향을 제외한 3방향으로 이동하며 블록 선택
-		for(int d=0; d<3; d++) {
-			
-			int nr = r+dr[d];
-			int nc = c+dc[d];
-			
-			//경계를 벗어나거나 이미 방문했다면 다음 방향
-			if(nr>N || nc<1 || nc>M || visited[nr][nc]) continue;
-			
-			visited[nr][nc] = true;
-			dfs(nr, nc, sum+map[nr][nc], cnt+1);
-			visited[nr][nc] = false;
-		}
-		
-	}
-	
-	
+        boolean hasNegativeCycle = false; // 음수 사이클 확인(N-1번 반복 후 또 되면(N번 가능) 음수 사이클이 존재 
+        for (Edge e : edges) {
+            if ((minTime[e.from] != max )&& (minTime[e.to] > minTime[e.from] + e.time)) {
+                hasNegativeCycle = true;
+                break;
+            }
+        }
 
+        if (hasNegativeCycle) {
+            System.out.println("-1");
+        } else {
+            for (int i = 2; i <= N; i++) {
+                if (minTime[i] == max) {
+                    System.out.println("-1");
+                } else {
+                    System.out.println(minTime[i]);
+                }
+            }
+        }
+    }
 }
