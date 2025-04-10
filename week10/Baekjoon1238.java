@@ -1,125 +1,75 @@
-
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.util.StringTokenizer;
-
-/**
+import java.io.*;
+import java.util.*;
+/*
+ * 메모리: 21676KB
+ * 시간: 284ms
  * 
- * 각 지점을 중심으로 dfs 아래, 왼쪽, 오른쪽 방향으로만 dfs 탐색 depth:4로
- * 	- 탐색 시 최대값을 발견한다면 갱신
- * 탐색한 지점은 방문 처리
- * 
- * 
- * 
- * 가운데 모양은 따로 탐색 필요
- * 
- * 
- * @author SSAFY
- *
+ * 학생 N명, 단방향 도로 M개, 마을 X번 
+ * Ti: i번째 길을 지나는 시간 
+ * 최소시간 N개  중 최대 시간 
  */
-public class Main_B_14500_테트로미노_연민호 {
-	
-	//하좌우상
-	final static int[] dr = {1, 0, 0, -1};
-	final static int[] dc = {0, -1, 1, 0};
-	
-	
-	
-	static int N;	//세로 크기
-	static int M;	//가로 크기
-	
-	static int[][] map;	//숫자판 정보
-	
-	static boolean[][] visited;	//방문체크
-	
-	static int max;	//최댓값
-	
-	public static void main(String[] args) throws IOException {
-		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-		
-		StringTokenizer st = new StringTokenizer(br.readLine());
-		
-		N = Integer.parseInt(st.nextToken());
-		M = Integer.parseInt(st.nextToken());
-		
-		//탐색의 편이를 위해 공백을 넣어놓음
-		map = new int[N+2][M+2];
-		for(int i=1; i<=N; i++) {
-			st = new StringTokenizer(br.readLine());
-			for(int j=1; j<=M; j++) {
-				map[i][j] = Integer.parseInt(st.nextToken());
-			}
-		}
-		
-		
-		visited = new boolean[N+2][M+2];
-		
-		
-		for(int i=1; i<=N; i++) {
-			for(int j=1; j<=M; j++) {
-				visited[i][j] = true;
-				dfs(i,j, map[i][j], 1);
-				visited[i][j] = false;
-				
-				//가운데 블록 기준 3개 블록이 붙어있는 테트로미노 탐색
-				etc(i, j, map[i][j]);
-			}
-		}
-		
-		System.out.println(max);
-	}
 
-	//가운데 블록 기준 3개 블록이 붙어있는 테트로미노 탐색
-	private static void etc(int r, int c, int sum) {
-		
-		//(r,c) 기준 4방의 값을 모두 더함
-		for(int d=0; d<4; d++) {
-			int nr = r+dr[d];
-			int nc = c+dc[d];
-			sum+= map[nr][nc];
-		}
-		
-		//4방의 값을 하나씩 빼보면서 해당 값이 최댓값이라면 갱신
-		for(int d=0; d<4; d++) {
-			int nr = r+dr[d];
-			int nc = c+dc[d];
-			max = Math.max(max, sum-map[nr][nc]);
-		}
-	}
+public class Main {
+    static class Edge {
+        int to, weight;
+        public Edge(int to, int weight) {
+            this.to = to;
+            this.weight = weight;
+        }
+    }
+    static final int max = 1_000_000_000;
+    static int N, M, X;
+    static List<List<Edge>> goGraph = new ArrayList<>();
+    static List<List<Edge>> backGraph = new ArrayList<>();
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        StringTokenizer st = new StringTokenizer(br.readLine());
+        N = Integer.parseInt(st.nextToken()); 
+        M = Integer.parseInt(st.nextToken()); 
+        X = Integer.parseInt(st.nextToken()); 
 
-	/**
-	 * 블록하나를 선택하고 다음 블록 선택은 재귀호출로 넘김
-	 * @param r
-	 * @param c
-	 * @param sum	//선택한 블록의 숫자 합
-	 * @param cnt	//선택한 블록의 개수
-	 */
-	private static void dfs(int r, int c, int sum, int cnt) {
+        for (int i = 0; i <= N; i++) { //초기화 
+            goGraph.add(new ArrayList<>());
+            backGraph.add(new ArrayList<>());
+        }
 
-		//step01. 4개의 블록 선택 완료
-		if(cnt==4) {
-			//step 02. 선택한 블록 숫자의 합이 최댓값이라면 갱신
-			max = Math.max(sum, max);
-			return;
-		}
-		
-		//윗 방향을 제외한 3방향으로 이동하며 블록 선택
-		for(int d=0; d<3; d++) {
-			
-			int nr = r+dr[d];
-			int nc = c+dc[d];
-			
-			//경계를 벗어나거나 이미 방문했다면 다음 방향
-			if(nr>N || nc<1 || nc>M || visited[nr][nc]) continue;
-			
-			visited[nr][nc] = true;
-			dfs(nr, nc, sum+map[nr][nc], cnt+1);
-			visited[nr][nc] = false;
-		}
-		
-	}
-	
-	
+        for (int i = 0; i < M; i++) {
+            st = new StringTokenizer(br.readLine());
+            int from = Integer.parseInt(st.nextToken());
+            int to = Integer.parseInt(st.nextToken());
+            int weight = Integer.parseInt(st.nextToken());
+            goGraph.get(from).add(new Edge(to, weight)); // 정방향 
+            backGraph.get(to).add(new Edge(from, weight));// 역방향 
+        }
 
+        int[] toX = dijkstra(backGraph, X); // 각 마을에서 X까지
+        int[] fromX = dijkstra(goGraph, X); // X에서 각 마을까지
+        int maxTime = 0;
+        for (int i = 1; i <= N; i++) {
+            maxTime = Math.max(maxTime, toX[i] + fromX[i]); //왕복 시간들 중 가장 오래걸리는 시간 구하기 
+        }
+
+        System.out.println(maxTime);
+    }
+
+    public static int[] dijkstra(List<List<Edge>> graph, int start) {
+        PriorityQueue<Edge> pq = new PriorityQueue<>(Comparator.comparingInt(e -> e.weight)); //거리가 작은 간선을 먼저 꺼내도록 기준 설정 
+        int[] dist = new int[N + 1];
+        Arrays.fill(dist, max);
+        dist[start] = 0;
+        pq.offer(new Edge(start, 0));
+
+        while (!pq.isEmpty()) {
+            Edge current = pq.poll(); //거리가 가장 작은 정점 꺼내기(정렬되어있기 때문에) 
+            int now = current.to; // 방문 중인 정점 번호를 now에 저장 
+            if (current.weight > dist[now]) continue; //최단 시간을 찾아야하므로 최단 시간 아니면 continue
+            for (Edge next : graph.get(now)) { //연결된 모든 next를 탐색 
+                if (dist[next.to] > dist[now] + next.weight) {
+                    dist[next.to] = dist[now] + next.weight;
+                    pq.offer(new Edge(next.to, dist[next.to]));
+                }
+            }
+        }
+        return dist;
+    }
 }
