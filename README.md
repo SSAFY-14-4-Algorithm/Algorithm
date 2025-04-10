@@ -160,6 +160,21 @@
 | 13549 | 백준   | [숨바꼭질3](https://www.acmicpc.net/problem/13549)                 | 골드 V   |
 | 9084  | 백준   | [동전](https://www.acmicpc.net/problem/9084)                       | 골드 V   |
 | 11657 | 백준   | [타임머신](https://www.acmicpc.net/problem/11657)                  | 골드 IV  |
-| 1238  | 백준   | [파티티](https://www.acmicpc.net/problem/1238)                     | 골드 III |
+| 1238  | 백준   | [파티](https://www.acmicpc.net/problem/1238)                     | 골드 III |
+
+</details>
+
+### 11주차 DP,투포인터,LIS,KMP 문제
+
+<details>
+<summary>문제</summary>
+
+| 번호  | 사이트 | 문제                                                               | 난이도   |
+| ----- | ------ | ------------------------------------------------------------------ | -------- |
+| 2467  | 백준   | [용액](https://www.acmicpc.net/problem/2467)                         | 골드 V   |
+| 14658 | 백준   | [하늘에서 별똥별이 빗발친다](https://www.acmicpc.net/problem/14658)  | 골드 III  |
+| 2550  | 백준   | [전구](https://www.acmicpc.net/problem/2550)                         | 골드 III   |
+| 1520  | 백준   | [내리막 길](https://www.acmicpc.net/problem/1520)                    | 골드 III   |
+| 1786  | 백준   | [찾기](https://www.acmicpc.net/problem/1786)                        | 플레 V   |
 
 </details>
