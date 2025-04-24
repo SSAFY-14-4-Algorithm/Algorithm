@@ -178,3 +178,18 @@
 | 1786  | 백준   | [찾기](https://www.acmicpc.net/problem/1786)                        | 플레 V   |
 
 </details>
+
+### 12주차 A형 기출+그리디문제
+
+<details>
+<summary>문제</summary>
+
+| 번호  | 사이트 | 문제                                                               | 난이도   |
+| ----- | ------ | ------------------------------------------------------------------ | -------- |
+| 2589  | 백준   | [보물섬](https://www.acmicpc.net/problem/2589)                       | 골드 V   |
+| 19539 | 백준   | [사과나무](https://www.acmicpc.net/problem/19539)                    | 골드 V  |
+| 1744  | 백준   | [수 묶기](https://www.acmicpc.net/problem/1744)                      | 골드 IV   |
+| 17281  | 백준   | [⚾](https://www.acmicpc.net/problem/17281)                        | 골드 IV   |
+| 16637  | 백준   | [괄호 추가하기](https://www.acmicpc.net/problem/16637)              | 골드 III   |
+
+</details>
