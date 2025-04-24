@@ -24,7 +24,8 @@ public class Baekjoon16637 {
         System.out.println(max);
     }
 
-    static void dfs(int idx, int nowResult) {
+    private static void dfs(int idx, int nowResult) {
+        // 연산자 다씀
         if (idx >= op.length) {
             max = Math.max(max, nowResult);
             return;
@@ -35,13 +36,18 @@ public class Baekjoon16637 {
 
         // 괄호 O
         if (idx + 1 < op.length) {
-            int parenthesesResult = calc(num[idx + 1], num[idx + 2], op[idx + 1]);
+            int parenthesesResult = calc(num[idx + 1], // 괄호 첫 번째 숫자
+                    num[idx + 2], // 괄호 두 번째 숫자
+                    op[idx + 1] // 괄호 연산자
+            );
+            // 위 결과를 기존 nowResult와 현재 연산자로 한 번 더 계산
             int afterResult = calc(nowResult, parenthesesResult, op[idx]);
+            // 연산자 두 칸 건너뛰고 재귀
             dfs(idx + 2, afterResult);
         }
     }
 
-    static int calc(int a, int b, char operator) {
+    private static int calc(int a, int b, char operator) {
         switch (operator) {
             case '+':
                 return a + b;
