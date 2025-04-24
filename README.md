@@ -176,5 +176,23 @@
 | 2550  | 백준   | [전구](https://www.acmicpc.net/problem/2550)                         | 골드 III   |
 | 1520  | 백준   | [내리막 길](https://www.acmicpc.net/problem/1520)                    | 골드 III   |
 | 1786  | 백준   | [찾기](https://www.acmicpc.net/problem/1786)                        | 플레 V   |
+<<<<<<< HEAD
+=======
+
+</details>
+
+### 12주차 A형 기출+그리디문제
+
+<details>
+<summary>문제</summary>
+
+| 번호  | 사이트 | 문제                                                               | 난이도   |
+| ----- | ------ | ------------------------------------------------------------------ | -------- |
+| 2589  | 백준   | [보물섬](https://www.acmicpc.net/problem/2589)                       | 골드 V   |
+| 19539 | 백준   | [사과나무](https://www.acmicpc.net/problem/19539)                    | 골드 V  |
+| 1744  | 백준   | [수 묶기](https://www.acmicpc.net/problem/1744)                      | 골드 IV   |
+| 17281  | 백준   | [⚾](https://www.acmicpc.net/problem/17281)                        | 골드 IV   |
+| 16637  | 백준   | [괄호 추가하기](https://www.acmicpc.net/problem/16637)              | 골드 III   |
+>>>>>>> aaaa1fa11e6dbe8a113a7bba199a43dae92fad38
 
 </details>
