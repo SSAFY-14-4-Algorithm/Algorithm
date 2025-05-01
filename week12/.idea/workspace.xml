@@ -5,11 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5c0cf3b1-1843-40c0-a826-d2ac6ed36ab2" name="변경" comment="">
-      <change beforePath="$PROJECT_DIR$/Baekjoon16637.java" beforeDir="false" afterPath="$PROJECT_DIR$/Baekjoon16637.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Baekjoon17281.java" beforeDir="false" afterPath="$PROJECT_DIR$/Baekjoon17281.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Baekjoon1744.java" beforeDir="false" afterPath="$PROJECT_DIR$/Baekjoon1744.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Baekjoon19539.java" beforeDir="false" afterPath="$PROJECT_DIR$/Baekjoon19539.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Baekjoon2589.java" beforeDir="false" afterPath="$PROJECT_DIR$/Baekjoon2589.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -19,9 +15,9 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 2
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 2
+}</component>
   <component name="ProjectId" id="2wAmdLW9YtI3AfuMNfeozmw6z7o" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -33,9 +29,22 @@
     "RunOnceActivity.git.unshallow": "true",
     "git-widget-placeholder": "ahyun",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/SAMSUNG/Desktop/ssafy/Algorithm/week12"
+    "last_opened_file_path": "C:/Users/SAMSUNG/Desktop/AHYUN/algo"
   }
 }]]></component>
+  <component name="RunManager">
+    <configuration default="true" type="JetRunConfigurationType">
+      <module name="week12" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <module name="week12" />
+      <option name="filePath" />
+      <method v="2" />
+    </configuration>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="애플리케이션 수준" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="디폴트 작업">
