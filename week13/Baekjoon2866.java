@@ -14,7 +14,7 @@ import java.io.IOException;
 import java.util.HashSet;
 import java.util.Set;
 
-public class Baekjjon2866 {
+public class Baekjoon2866 {
     public static void main(String[] args) throws IOException {
         int N = readInt();
         int M = readInt();
