@@ -1,4 +1,3 @@
-package algorithm;
 /*
  * BOJ 2866번 : 문자열 잘라내기
  * 메모리 : 308,140kb
