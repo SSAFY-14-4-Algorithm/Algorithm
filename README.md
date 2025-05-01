@@ -193,3 +193,18 @@
 | 16637  | 백준   | [괄호 추가하기](https://www.acmicpc.net/problem/16637)              | 골드 III   |
 
 </details>
+
+### 13주차 문자열+트라이문제
+
+<details>
+<summary>문제</summary>
+
+| 번호  | 사이트 | 문제                                                               | 난이도   |
+| ----- | ------ | ------------------------------------------------------------------ | -------- |
+| 2866  | 백준   | [문자열 잘라내기](https://www.acmicpc.net/problem/2866)              | 골드 V   |
+| 2179 | 백준   | [비슷한 단어](https://www.acmicpc.net/problem/2179)                   | 골드 IV  |
+| 5052  | 백준   | [전화번호 목록](https://www.acmicpc.net/problem/5052)                  | 골드 IV  |
+| 22860  | 백준   | [폴더 정리(small)](https://www.acmicpc.net/problem/22860)           | 골드 III |
+| 14725  | 백준   | [개미굴](https://www.acmicpc.net/problem/14725)                     | 골드 III |
+
+</details>
