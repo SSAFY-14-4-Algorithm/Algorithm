@@ -16,7 +16,7 @@ public class Baekjoon15919 {
     public static void main(String[] args) throws IOException {
         int N = readInt();
         int M = readInt();
-        int minLengthPeriodOfNotTravelingPeriods = N;
+        int minimizedMaxLengthPeriodOfNotTravelingPeriods = N;
         int[] dp = new int[M];
         Trip[] trips = new Trip[M];
         for (int i = 0; i < M; i++) {
@@ -51,10 +51,10 @@ public class Baekjoon15919 {
                 }
             }
             // 마지막 공백과 비교
-            minLengthPeriodOfNotTravelingPeriods = Math.min(minLengthPeriodOfNotTravelingPeriods,
+            minimizedMaxLengthPeriodOfNotTravelingPeriods = Math.min(minimizedMaxLengthPeriodOfNotTravelingPeriods,
                     Math.max(dp[i], endGap[i]));
         }
-        System.out.println(minLengthPeriodOfNotTravelingPeriods);
+        System.out.println(minimizedMaxLengthPeriodOfNotTravelingPeriods);
     }
 
     private static int readInt() throws IOException {
