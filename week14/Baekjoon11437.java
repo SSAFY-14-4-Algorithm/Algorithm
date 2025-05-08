@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.StringTokenizer;
 
-public class Main {
+public class Baekjoon11437 {
     private static int N, LOG;
     private static List<List<Integer>> tree = new ArrayList<>();
     private static int[][] parent;
