@@ -208,3 +208,35 @@
 | 14725  | 백준   | [개미굴](https://www.acmicpc.net/problem/14725)                     | 골드 III |
 
 </details>
+
+
+### 14주차 완전탐색,DP,LCA문제
+
+<details>
+<summary>문제</summary>
+
+| 번호  | 사이트 | 문제                                                               | 난이도   |
+| ----- | ------ | ------------------------------------------------------------------ | -------- |
+| 15922  | 백준   | [아우으 우아으이야!!](https://www.acmicpc.net/problem/15922)        | 골드 V   |
+| 15927 | 백준   | [회문은 회문아니야!!](https://www.acmicpc.net/problem/15927)         | 골드 V  |
+| 15919  | 백준   | [사자는 여행왕이야!!](https://www.acmicpc.net/problem/15919)        | 골드 III  |
+| 28423  | 백준   | [게임](https://www.acmicpc.net/problem/28423)                      | 골드 IV |
+| 11437  | 백준   | [LCA](https://www.acmicpc.net/problem/11437)                       | 골드 III |
+
+</details>
+
+
+### 15주차 기업 코테 문제
+
+<details>
+<summary>문제</summary>
+
+| 번호  | 사이트 | 문제                                                               | 난이도   |
+| ----- | ------ | ------------------------------------------------------------------ | -------- |
+| 1253  | 백준   | [좋다](https://www.acmicpc.net/problem/1253)                        | 골드 IV   |
+| 2138  | 백준   | [전구와 스위치](https://www.acmicpc.net/problem/2138)                 | 골드 IV  |
+| 10159  | 백준   | [저울](https://www.acmicpc.net/problem/10159)                      | 골드 IV  |
+| 2638  | 백준   | [치즈](https://www.acmicpc.net/problem/2638)                         | 골드 III |
+| 2746  | 백준   | [좋은 배열 만들기](https://www.acmicpc.net/problem/2746)               | 골드 III |
+
+</details>
