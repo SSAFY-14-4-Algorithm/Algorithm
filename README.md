@@ -2,6 +2,10 @@
 
 ## 알고리즘 스터디
 
+코드 올리는법
+자기 이름으로 브랜치 판 후 Baekjoon_문제번호_문제이름.java 파일로 올리기
+올릴때 코드 시간과 메모리 주석으로 적기
+
 [전체 코드 문제집](https://www.acmicpc.net/group/workbook/23041)
 
 ### 1주차 Stack,Queue
