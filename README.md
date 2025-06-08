@@ -4,6 +4,7 @@
 
 코드 올리는법
 자기 이름으로 브랜치 판 후 Baekjoon_문제번호_문제이름.java 파일로 올리기
+
 올릴때 코드 시간과 메모리 주석으로 적기
 
 [전체 코드 문제집](https://www.acmicpc.net/group/workbook/23041)
@@ -242,5 +243,21 @@
 | 10159  | 백준   | [저울](https://www.acmicpc.net/problem/10159)                      | 골드 IV  |
 | 2638  | 백준   | [치즈](https://www.acmicpc.net/problem/2638)                         | 골드 III |
 | 2746  | 백준   | [좋은 배열 만들기](https://www.acmicpc.net/problem/2746)               | 골드 III |
+
+</details>
+
+
+### 16주차 알고리즘 재활 문제
+
+<details>
+<summary>문제</summary>
+
+| 번호  | 사이트 | 문제                                                               | 난이도   |
+| ----- | ------ | ------------------------------------------------------------------ | -------- |
+| 2096  | 백준   | [내려가기](https://www.acmicpc.net/problem/2096)                     | 골드 V   |
+| 1916  | 백준   | [최소비용 구하기](https://www.acmicpc.net/problem/1916)               | 골드 V  |
+| 2573  | 백준   | [빙산](https://www.acmicpc.net/problem/2573)                        | 골드 IV  |
+| 7662  | 백준   | [이중 우선순위큐](https://www.acmicpc.net/problem/7662)              | 골드 IV |
+| 16562  | 백준   | [친구비](https://www.acmicpc.net/problem/16562)                     | 골드 IV |
 
 </details>
