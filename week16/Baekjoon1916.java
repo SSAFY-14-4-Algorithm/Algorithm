@@ -5,12 +5,15 @@ import java.util.*;
 
 
 /**
- * 다음 줄로 내려가는 조건
- * 바로 아래의 수로 넘어가거나, 바로 아래의 수와 붙어있는 수만 이동 가능
+ * 
+ * 50576ms	324kb
+ * 서로 다른 도시 N개, 버스 M 개
+ * 출발 도시 번호, 도착지 번호, 버스 비용
+ * 출발점 도시 번호, 도착점 도시번호
  *
- * dp[i][0] = arr[i][0] + max(dp[i-1][0],dp[i-1][1])
- * dp[i][1] = arr[i][1] + max(dp[i-1][0], dp[i-1][1], dp[i-1][2])
- * dp[i][2] = arr[i][2] + max(dp[i-1][1], dp[i-1][2])
+ * 다익스트라
+ * 1과 연결된 것 중 가장 짧은 간선 뽑고, dist 배열 갱신
+ * 1 -> 4 를 경유하는 것 중 가장 짧은 간선들 갱신
  */
 public class Main {
     public static void main(String[] args) throws IOException {
@@ -18,49 +21,75 @@ public class Main {
         StringTokenizer st;
         StringBuilder sb = new StringBuilder();
 
-        int n = Integer.parseInt(reader.readLine());
+        int N = Integer.parseInt(reader.readLine());
+        int M = Integer.parseInt(reader.readLine());
 
-        int[][] arr = new int[n][3];
-        int[][] maxDp = new int[n][3];
-        int[][] minDp = new int[n][3];
+        graph = new ArrayList[N+1];
+        dist = new int[N+1]; //시작점에서 다른 도시까지의 최소 거리
+        Arrays.fill(dist, Integer.MAX_VALUE); //dist 배열 초기화
 
-        for (int i = 0; i < n; i++) {
+        for (int i = 0; i <= N; i++) {
+            graph[i] = new ArrayList<>();
+        }
+
+        for (int i = 0; i < M; i++) {
             st = new StringTokenizer(reader.readLine());
-            for (int j = 0; j < 3; j++) {
-                arr[i][j] = Integer.parseInt(st.nextToken());
+            int start = Integer.parseInt(st.nextToken());
+            int end = Integer.parseInt(st.nextToken());
+            int cost = Integer.parseInt(st.nextToken());
+            graph[start].add(new Node(end, cost));
+        }
+
+        st = new StringTokenizer(reader.readLine());
+        int start = Integer.parseInt(st.nextToken());
+        int end = Integer.parseInt(st.nextToken());
+
+        dijkstra(start,end);
+    }
+
+    static ArrayList<Node>[] graph; //배열 안 노드 클래스
+    static int[] dist;
+
+    static void dijkstra(int start, int end) {
+        PriorityQueue<Node> pq = new PriorityQueue<>();
+        dist[start] = 0;
+        pq.add(new Node(start,0));
+
+        while (!pq.isEmpty()) {
+            Node curNode = pq.poll();
+
+            if(curNode.to == end) { //end가 poll 된다면, end를 통하는 도착지를 확인하는 건데, 그 뒷 경유지는 더이상 볼 필요 없다
+                System.out.println(dist[end]);
+                return;
             }
-        }
 
-        //dp배열 채우기
-        for (int i = 0; i < 3; i++) {
-            maxDp[0][i] = arr[0][i];
-            minDp[0][i] = arr[0][i];
-        }
+            if(curNode.cost > dist[curNode.to]) continue; //이미 더 짧은 거리를 알고 있으면 무시
 
-        for (int i = 1; i < n; i++) {
-            for (int j = 0; j < 3; j++) {
-                if(j==0) {
-                    maxDp[i][j] = arr[i][j] + Math.max(maxDp[i-1][0], maxDp[i-1][1]);
-                    minDp[i][j] = arr[i][j] + Math.min(minDp[i-1][0], minDp[i-1][1]);
-                }
-                else if(j==2) {
-                    maxDp[i][j] = arr[i][j] + Math.max(maxDp[i-1][1], maxDp[i-1][2]);
-                    minDp[i][j] = arr[i][j] + Math.min(minDp[i-1][1], minDp[i-1][2]);
-                }
-                else {
-                    maxDp[i][j] = arr[i][j] + Math.max(Math.max(maxDp[i-1][j-1], maxDp[i-1][j]), maxDp[i-1][j+1]);
-                    minDp[i][j] = arr[i][j] + Math.min(Math.min(minDp[i-1][j-1], minDp[i-1][j]), minDp[i-1][j+1]);
+            for(Node nextNode : graph[curNode.to]) { //현재 노드와 연결된 다른 노드들
+                int nextCost = curNode.cost + nextNode.cost;
+
+                if(nextCost < dist[nextNode.to]) { //경유지를 거쳐오는 것이 더 빠르다면
+                    dist[nextNode.to] = nextCost;
+                    pq.add(new Node(nextNode.to, nextCost));
                 }
             }
+
         }
-        int max = Integer.MIN_VALUE;
-        int min = Integer.MAX_VALUE;
-        for (int i = 0; i < 3; i++) {
-            max = Math.max(maxDp[n-1][i], max);
-            min = Math.min(minDp[n-1][i], min);
+    }
+
+    static class Node implements Comparable<Node> {
+        int to;
+        int cost;
+
+        public Node(int to, int cost) {
+            this.to = to;
+            this.cost = cost;
         }
 
-        System.out.println(max + " " + min);
+        @Override
+        public int compareTo(Node o) {
+            return this.cost - o.cost;
+        }
     }
 }
 
