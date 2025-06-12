@@ -1,125 +1,80 @@
-
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.StringTokenizer;
+import java.util.*;
+
 
 /**
- * 
- * 각 지점을 중심으로 dfs 아래, 왼쪽, 오른쪽 방향으로만 dfs 탐색 depth:4로
- * 	- 탐색 시 최대값을 발견한다면 갱신
- * 탐색한 지점은 방문 처리
- * 
- * 
- * 
- * 가운데 모양은 따로 탐색 필요
- * 
- * 
- * @author SSAFY
+ * lazy 처리 요약
+ * 우선순위 큐 2개를 만들고,
+ * 삭제 연산을 바로 반영하지 않고, map에 기록해두고,
+ * 큐에서 꺼낼 때 그 값이 삭제된 값이면 무시하는 방법
  *
+ * deleted map 에서 value 값을 삭제 요청을 count 하는게 아닌, 현재 남아 있는 갯수로 사용해야 함
+ * 삭제 요청으로 관리하면, 출력할 때, maxPQ에서 deleted 를 쓰면서 minPQ가 영향을 받는다
  */
-public class Main_B_14500_테트로미노_연민호 {
-	
-	//하좌우상
-	final static int[] dr = {1, 0, 0, -1};
-	final static int[] dc = {0, -1, 1, 0};
-	
-	
-	
-	static int N;	//세로 크기
-	static int M;	//가로 크기
-	
-	static int[][] map;	//숫자판 정보
-	
-	static boolean[][] visited;	//방문체크
-	
-	static int max;	//최댓값
-	
-	public static void main(String[] args) throws IOException {
-		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-		
-		StringTokenizer st = new StringTokenizer(br.readLine());
-		
-		N = Integer.parseInt(st.nextToken());
-		M = Integer.parseInt(st.nextToken());
-		
-		//탐색의 편이를 위해 공백을 넣어놓음
-		map = new int[N+2][M+2];
-		for(int i=1; i<=N; i++) {
-			st = new StringTokenizer(br.readLine());
-			for(int j=1; j<=M; j++) {
-				map[i][j] = Integer.parseInt(st.nextToken());
-			}
-		}
-		
-		
-		visited = new boolean[N+2][M+2];
-		
-		
-		for(int i=1; i<=N; i++) {
-			for(int j=1; j<=M; j++) {
-				visited[i][j] = true;
-				dfs(i,j, map[i][j], 1);
-				visited[i][j] = false;
-				
-				//가운데 블록 기준 3개 블록이 붙어있는 테트로미노 탐색
-				etc(i, j, map[i][j]);
-			}
-		}
-		
-		System.out.println(max);
-	}
+public class Main {
+    public static void main(String[] args) throws IOException {
+        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+        StringTokenizer st;
+        StringBuilder sb = new StringBuilder();
 
-	//가운데 블록 기준 3개 블록이 붙어있는 테트로미노 탐색
-	private static void etc(int r, int c, int sum) {
-		
-		//(r,c) 기준 4방의 값을 모두 더함
-		for(int d=0; d<4; d++) {
-			int nr = r+dr[d];
-			int nc = c+dc[d];
-			sum+= map[nr][nc];
-		}
-		
-		//4방의 값을 하나씩 빼보면서 해당 값이 최댓값이라면 갱신
-		for(int d=0; d<4; d++) {
-			int nr = r+dr[d];
-			int nc = c+dc[d];
-			max = Math.max(max, sum-map[nr][nc]);
-		}
-	}
+        int T = Integer.parseInt(reader.readLine());
 
-	/**
-	 * 블록하나를 선택하고 다음 블록 선택은 재귀호출로 넘김
-	 * @param r
-	 * @param c
-	 * @param sum	//선택한 블록의 숫자 합
-	 * @param cnt	//선택한 블록의 개수
-	 */
-	private static void dfs(int r, int c, int sum, int cnt) {
+        for (int test_case = 0; test_case < T; test_case++) {
+            int k = Integer.parseInt(reader.readLine());
 
-		//step01. 4개의 블록 선택 완료
-		if(cnt==4) {
-			//step 02. 선택한 블록 숫자의 합이 최댓값이라면 갱신
-			max = Math.max(sum, max);
-			return;
-		}
-		
-		//윗 방향을 제외한 3방향으로 이동하며 블록 선택
-		for(int d=0; d<3; d++) {
-			
-			int nr = r+dr[d];
-			int nc = c+dc[d];
-			
-			//경계를 벗어나거나 이미 방문했다면 다음 방향
-			if(nr>N || nc<1 || nc>M || visited[nr][nc]) continue;
-			
-			visited[nr][nc] = true;
-			dfs(nr, nc, sum+map[nr][nc], cnt+1);
-			visited[nr][nc] = false;
-		}
-		
-	}
-	
-	
+            PriorityQueue<Integer> minPQ = new PriorityQueue<>(); //오름차순
+            PriorityQueue<Integer> maxPQ = new PriorityQueue<>(Comparator.reverseOrder()); //내림차순
+            countMap = new HashMap<>(); //삭제된 값 관리, key, value = 남은 갯수
 
+            for (int i = 0; i < k; i++) {
+                st = new StringTokenizer(reader.readLine());
+                char order = st.nextToken().charAt(0);
+                int num = Integer.parseInt(st.nextToken());
+
+                if (order == 'I') { //삽입
+                    minPQ.offer(num);
+                    maxPQ.offer(num);
+                    countMap.put(num, countMap.getOrDefault(num, 0) + 1);
+                } else { //삭제
+                    if (num == -1) delete(minPQ); //최솟값 삭제
+                    else delete(maxPQ); //최댓값 삭제
+                }
+            }
+
+            Integer max = getValid(maxPQ);
+            Integer min = getValid(minPQ);
+
+            if(max == null || min == null) sb.append("EMPTY").append("\n");
+            else sb.append(max).append(" ").append(min).append("\n");
+        }
+        System.out.print(sb);
+    }
+
+    static HashMap<Integer, Integer> countMap;
+
+    //pq와 저장된 deleted를 통해 lazy deletion을 하는 함수
+    static void delete(PriorityQueue<Integer> pq) {
+
+        while (!pq.isEmpty()) {
+            int key = pq.poll();
+            int count = countMap.getOrDefault(key,0); //없으면 0
+            if(count > 0) { //삭제할 값이 있으면
+                countMap.put(key, count-1);
+                break;
+            }
+        }
+    }
+
+    static Integer getValid(PriorityQueue<Integer> pq) {
+        while (!pq.isEmpty()) {
+            int key = pq.peek();
+            int count = countMap.getOrDefault(key,0);
+            if(count > 0) return key; //유효한 값일 경우
+            else pq.poll(); //삭제된 값이면 무시
+        }
+        return null;
+    }
 }
+
