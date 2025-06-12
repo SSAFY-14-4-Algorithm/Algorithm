@@ -5,7 +5,7 @@ import java.util.ArrayDeque;
 import java.util.Queue;
 import java.util.StringTokenizer;
 
-//메모리 시간
+//메모리	164228kb 시간 564ms
 public class Baekjoon2573 {
 	static int[][] iceberg;
 	static int[] dr = {0, -1, 0, 1};
