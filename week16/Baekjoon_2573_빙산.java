@@ -1,111 +1,131 @@
-/**
- * 250611
- * Java8 | 시간: 388ms, 메모리 : 123,540KB
- */
-import java.util.*;
 import java.io.*;
+import java.util.*;
 
+
+/**
+ * 시간: 380ms
+ * 메모리: 71,212KB
+ */
 public class Baekjoon_2573_빙산 {
-    private static int N, M;
-    private static boolean[][] isIceberg, isVisited;
-    private static final int[] dx = {0, 0, -1, 1};
-    private static final int[] dy = {-1, 1, 0, 0};
-
-    private static class Cor{
-        int x, y, height;
-        Cor(int x, int y, int height){
-            this.x = x;
-            this.y = y;
-            this.height = height;
-        }
-    }
-
+	static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+	static StringBuilder sb = new StringBuilder();
+	
+	static final int[] dy = {0,0,1,-1};
+	static final int[] dx = {1,-1,0,0};
+	
+	static int N, M;
+	static int[][] mat;
+	static int[][] melts;
+	
+	
+	static boolean inRange(int y, int x) {
+		return 0 <= y && y < N && 0 <= x && x < M;
+	}
+	
+	static void floodFill(int ay, int ax, boolean[][] isVisisted) {
+		Deque<int[]> q = new ArrayDeque<>();
+		
+		q.offerLast(new int[] {ax, ay});
+		isVisisted[ay][ax] = true;
+		while(!q.isEmpty()) {
+			int[] node = q.pollFirst();
+			int y = node[1];
+			int x = node[0];
+			
+			for(int d = 0; d < dy.length; ++d) {
+				int ny = y + dy[d];
+				int nx = x + dx[d];
+				if(inRange(ny, nx) && !isVisisted[ny][nx] && mat[y][x] > 0) {
+					q.offerLast(new int[] {nx, ny});
+					isVisisted[ny][nx] = true;
+				}
+			}
+		}
+	}
+	
+	static int getCount() {
+		boolean[][] isVisisted = new boolean[N][M];
+		
+		int cnt = 0;
+		for(int y = 0; y < N; ++y) {
+    		for(int x = 0; x < M; ++x) {
+    			if(isVisisted[y][x] || mat[y][x] <= 0) continue;
+    			floodFill(y, x, isVisisted);
+    			++cnt;
+    		}
+    	}
+		return cnt;
+	}
+	
+	static void update() {
+		Deque<int[]> q = new ArrayDeque<>();
+		
+		for(int y = 0; y < N; ++y) {
+    		for(int x = 0; x < M; ++x) {
+    			if(mat[y][x] <= 0) continue;
+    			
+    			if((mat[y][x] -= melts[y][x]) <= 0) {
+    				q.offerLast(new int[] {x, y});
+    			}
+    		}
+		}
+		
+		while(!q.isEmpty()) {
+			int[] node = q.pollFirst();
+			int y = node[1];
+			int x = node[0];
+			
+			for(int d = 0; d < dy.length; ++d) {
+				int ny = y + dy[d];
+				int nx = x + dx[d];
+				if(inRange(ny, nx)) {
+					++melts[ny][nx]; 
+				}
+			}
+		}
+	}
+	
     public static void main(String[] args) throws IOException {
-        N = readInt();
-        M = readInt();
-
-        Queue<Cor> icebergQueue = new ArrayDeque<>();
-
-        for (int i=0;i<N;i++) for (int j=0;j<M;j++) {
-            int height = readInt();
-            if (height>0) icebergQueue.offer(new Cor(i, j, height));
-        }
-
-        int year = 0;
-        while(!icebergQueue.isEmpty()){
-            isIceberg = new boolean[N][M];
-            for (Cor c:icebergQueue) isIceberg[c.x][c.y] = true;
-
-            if (isSeparated(icebergQueue)){
-                System.out.print(year);
-                return;
-            }
-
-            simulation(icebergQueue);
-            year++;
-        }
-
-        System.out.print(0);
+    	N = readInt();
+    	M = readInt();
+    	mat = new int[N][M];
+    	melts = new int[N][M];
+    	
+    	for(int y = 0; y < N; ++y) {
+    		for(int x = 0; x < M; ++x) {
+    			mat[y][x] = readInt();
+    		}
+    	}
+    	for(int y = 0; y < N; ++y) {
+    		for(int x = 0; x < M; ++x) {
+    			for(int d = 0; d < dy.length; ++d) {
+    				int ny = y + dy[d];
+    				int nx = x + dx[d];
+    				if(inRange(ny, nx) && mat[ny][nx] == 0) {
+    					++melts[y][x]; 
+    				}
+    			}
+    		}
+    	}
+    	
+    	int t = 0;
+    	while(true) {
+    		int cnt = getCount();
+    		if(cnt == 1) {
+    			update();
+    			t++;
+    			continue;
+    		}
+    		if(cnt == 0) System.out.print(0);
+    		else System.out.print(t);    			
+    		return;
+    	}
     }
-
-    // 녹이기
-    private static void simulation(Queue<Cor> icebergQueue){
-        int size = icebergQueue.size();
-
-        while(size-->0){
-            Cor c = icebergQueue.poll();
-            int water = 0;
-            for (int idx=0; idx<4; idx++){
-                int nx = c.x + dx[idx];
-                int ny = c.y + dy[idx];
-                if (nx<0||nx>=N||ny<0||ny>=M||isIceberg[nx][ny]) continue;
-                water++;
-            }
-
-            int newHeight = Math.max(c.height-water, 0);
-            if (newHeight>0) {
-                icebergQueue.offer(new Cor(c.x, c.y, newHeight));
-            }
-        }
-    }
-
-    // 두 덩어리 이상으로 분리되었는지 확인
-    private static boolean isSeparated(Queue<Cor> icebergQueue){
-
-        isVisited = new boolean[N][M];
-        int ct = 0;
-
-        for (Cor c : icebergQueue) {
-            if (!isVisited[c.x][c.y]) {
-                bfs(c.x, c.y);
-                if (++ct>=2) return true;
-            }
-        }
-        return false;
-    }
-
-    // 영역 구하기
-    private static void bfs(int x, int y){
-        Queue<Cor> q = new ArrayDeque<>();
-        q.offer(new Cor(x, y, 0));
-        isVisited[x][y] = true;
-
-        while(!q.isEmpty()){
-            Cor c = q.poll();
-            for (int idx=0; idx<4; idx++){
-                int nx = c.x + dx[idx];
-                int ny = c.y + dy[idx];
-                if (nx<0||nx>=N||ny<0||ny>=M) continue;
-                if (isVisited[nx][ny]||!isIceberg[nx][ny]) continue;
-                isVisited[nx][ny] = true;
-                q.offer(new Cor(nx, ny, 0));
-            }
-        }
-    }
-
-    private static StreamTokenizer st = new StreamTokenizer(new BufferedReader(new InputStreamReader(System.in)));
-    private static int readInt() throws IOException{
-        st.nextToken();
-        return (int) st.nval;
+    
+    static int readInt() throws IOException {
+    	int c, n = 0;
+    	while((c = System.in.read()) >= 0x30) n = (n << 3) + (n << 1) + (c & 0x0F);
+    	if(c == '\r') System.in.read();
+    	return n;
     }
 }

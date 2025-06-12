@@ -1,44 +1,53 @@
 import java.io.*;
+import java.util.*;
 
 /**
- * 250612
- * Java8 | 실행시간: 196 ms, 메모리: 17412 KB
+ * 시간: 124ms
+ * 메모리: 20,240KB
  */
-
 public class Baekjoon_2096_내려가기 {
-
-    public static void main(String[] args) throws IOException{
-
-        int N = readInt();
-        int[][] maxDp = new int[2][3];
-        int[][] minDp = new int[2][3];
-        for (int i=0;i<3;i++) maxDp[0][i] = minDp[0][i] = readInt();
-
-        for (int i=1;i<N;i++){
-            int a = readInt(), b = readInt(), c = readInt();
-            maxDp[1][0] = Math.max(maxDp[0][0], maxDp[0][1]) + a;
-            maxDp[1][1] = Math.max(Math.max(maxDp[0][0], maxDp[0][1]), maxDp[0][2]) + b;
-            maxDp[1][2] = Math.max(maxDp[0][1], maxDp[0][2]) + c;
-
-            minDp[1][0] = Math.min(minDp[0][0], minDp[0][1]) + a;
-            minDp[1][1] = Math.min(Math.min(minDp[0][0], minDp[0][1]), minDp[0][2]) + b;
-            minDp[1][2] = Math.min(minDp[0][1], minDp[0][2]) + c;
-
-            for (int j=0;j<3;j++){
-                maxDp[0][j] = maxDp[1][j];
-                minDp[0][j] = minDp[1][j];
-            }
+	static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+	static StringBuilder sb = new StringBuilder();
+	
+	static final int WIDTH = 3;
+	static int N;
+	static int[][] maxMat, minMat;
+	
+    public static void main(String[] args) throws IOException {
+        N = readInt();
+        maxMat = new int[N][WIDTH];
+        minMat = new int[N][WIDTH];
+        for(int y = 0; y < N; ++y) {
+        	for(int x= 0; x < WIDTH; ++x) {
+        		maxMat[y][x] = minMat[y][x] = readInt();
+        	}
         }
-
-        int maxResult = Math.max(Math.max(maxDp[0][0], maxDp[0][1]), maxDp[0][2]);
-        int minResult = Math.min(Math.min(minDp[0][0], minDp[0][1]), minDp[0][2]);
-
-        System.out.printf("%d %d", maxResult, minResult);
+        
+        int max = Integer.MIN_VALUE;
+        int min = Integer.MAX_VALUE;
+        for(int y = N - 2; y >= 0; --y) {
+        	maxMat[y][0] += Math.max(maxMat[y + 1][0], maxMat[y + 1][1]);
+        	minMat[y][0] += Math.min(minMat[y + 1][0], minMat[y + 1][1]);
+        	
+        	maxMat[y][1] += Math.max(Math.max(maxMat[y + 1][0], maxMat[y + 1][1]), maxMat[y + 1][2]);
+    		minMat[y][1] += Math.min(Math.min(minMat[y + 1][0], minMat[y + 1][1]), minMat[y + 1][2]);
+    		
+        	maxMat[y][2] += Math.max(maxMat[y + 1][1], maxMat[y + 1][2]);
+        	minMat[y][2] += Math.min(minMat[y + 1][1], minMat[y + 1][2]);
+        }
+        for(int x = 0; x < WIDTH; ++x) {
+        	max = Math.max(max, maxMat[0][x]);
+        	min = Math.min(min, minMat[0][x]);
+        }
+        
+        sb.append(max).append(" ").append(min);
+        System.out.print(sb);
     }
-
-    private static final StreamTokenizer st = new StreamTokenizer(new BufferedReader(new InputStreamReader(System.in)));
-    private static int readInt() throws IOException{
-        st.nextToken();
-        return (int) st.nval;
+    
+    static int readInt() throws IOException {
+    	int c, n = 0;
+    	while((c = System.in.read()) >= 0x30) n = (n << 3) + (n << 1) + (c & 0x0F);
+    	if(c == '\r') System.in.read();
+    	return n;
     }
 }

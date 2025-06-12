@@ -1,70 +1,88 @@
-import java.util.*;
 import java.io.*;
+import java.util.*;
 
 /**
- * 250612
- * Java8 | 시간: 328 ms, 메모리: 24,996 KB
+ * 시간: 184ms
+ * 메모리: 20,660KB
  */
-
 public class Baekjoon_1916_최소비용구하기 {
-    static class Node implements Comparable<Node>{
-        int v, cost;
-        Node(int v, int cost){
-            this.v = v;
-            this.cost = cost;
-        }
+	// Input Handler
+	static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+	static StringBuilder sb = new StringBuilder();
 
-        @Override
-        public int compareTo(Node o) {
-            return Integer.compare(this.cost, o.cost);
-        }
-    }
+	static class Node implements Comparable<Node> {
+		int vertex, weight;
 
-    public static void main(String[] args) throws IOException {
-        int N = readInt();
-        int M = readInt();
+		Node() { }
+		Node(int vertex, int weight) {
+			this.vertex = vertex;
+			this.weight = weight;
+		}
 
-        ArrayList<ArrayList<Node>> map = new ArrayList<>();
-        for (int i=0;i<=N;i++) map.add(new ArrayList<>());
+		@Override
+		public int compareTo(Node other) {
+			return this.weight - other.weight;
+		}
+	}
 
-        for (int i=0;i<M;i++){
-            int v = readInt();
-            int e = readInt();
-            int w = readInt();
-            map.get(v).add(new Node(e, w));
-        }
+	static final int MAX_N = 1_000;
+	static final int MAX_W = 100_000;
+	static final int INF = MAX_N * MAX_W;
 
-        int start = readInt();
-        int end = readInt();
-        System.out.print(dijkstra(N, start, end, map));
-    }
+	static int N, M, S, T;
+	static List<Node>[] adj = new List[MAX_N];
+	static int[] minDist = new int[MAX_N];
 
-    private static int dijkstra(int N, int start, int end, ArrayList<ArrayList<Node>> map){
-        int[] dist = new int[N+1];
-        Arrays.fill(dist, Integer.MAX_VALUE);
-        dist[start] = 0;
+	static void solution() {
+		Arrays.fill(minDist, 0, N, INF);
 
-        PriorityQueue<Node> pq = new PriorityQueue<>();
-        pq.offer(new Node(start, 0));
+		PriorityQueue<Node> pq = new PriorityQueue<Node>();
+		pq.offer(new Node(S, 0));
+		minDist[S] = 0;
 
-        while(!pq.isEmpty()){
-            Node c = pq.poll();
-            if (dist[c.v] < c.cost) continue;
+		while (!pq.isEmpty()) {
+			Node node = pq.poll();
+			int u = node.vertex, w = node.weight;
+			if (u == T)
+				break;
 
-            for (Node nextPoint:map.get(c.v)){
-                int nc = c.cost + nextPoint.cost;
-                if (dist[nextPoint.v]>nc){
-                    dist[nextPoint.v] = nc;
-                    pq.offer(new Node(nextPoint.v, nc));
-                }
-            }
-        }
-        return dist[end];
-    }
+			for (Node next : adj[u]) {
+				int v = next.vertex, edge = next.weight;
+				if (w + edge < minDist[v]) {
+					minDist[v] = w + edge;
+					pq.offer(new Node(v, minDist[v]));
+				}
+			}
+		}
+	}
 
-    private static final StreamTokenizer st = new StreamTokenizer(new BufferedReader(new InputStreamReader(System.in)));
-    private static int readInt() throws IOException{
-        st.nextToken();
-        return (int) st.nval;
-    }
+	public static void main(String[] args) throws IOException {
+		// Input
+		N = readInt();
+		for (int i = 0; i < N; ++i)
+			adj[i] = new ArrayList<Node>();
+
+		M = readInt();
+		for (int i = 0; i < M; ++i) {
+			int u = readInt() - 1;
+			int v = readInt() - 1;
+			int w = readInt();
+			adj[u].add(new Node(v, w));
+		}
+
+		S = readInt() - 1;
+		T = readInt() - 1;
+
+		solution();
+
+		// Output
+		System.out.print(minDist[T]);
+	}
+
+	static int readInt() throws IOException {
+		int c, n = 0;
+		while ((c = System.in.read()) >= 0x30) n = (n << 3) + (n << 1) + (c & 0x0F);
+		if (c == '\r') System.in.read();
+		return n;
+	}
 }
