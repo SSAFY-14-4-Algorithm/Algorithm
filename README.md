@@ -261,3 +261,19 @@
 | 16562  | 백준   | [친구비](https://www.acmicpc.net/problem/16562)                     | 골드 IV |
 
 </details>
+
+
+### 17주차 세그먼트 트리 및 기업코테 문제
+
+<details>
+<summary>문제</summary>
+
+| 번호  | 사이트 | 문제                                                               | 난이도   |
+| ----- | ------ | ------------------------------------------------------------------ | -------- |
+| 21939  | 백준   | [문제 추천 시스템 Version 1](https://www.acmicpc.net/problem/21939)  | 골드 IV   |
+| 2812  | 백준   | [크게 만들기](https://www.acmicpc.net/problem/2812)                  | 골드 III  |
+| 1516  | 백준   | [게임 개발](https://www.acmicpc.net/problem/1516)                   | 골드 III  |
+| 17182  | 백준   | [우주 탐사선](https://www.acmicpc.net/problem/17182)              | 골드 III |
+| 2357  | 백준   | [최솟값과 최댓값](https://www.acmicpc.net/problem/2357)              | 골드 I |
+
+</details>
