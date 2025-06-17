@@ -1,37 +1,32 @@
-// Node(min, max) 로 하나의 트리에 최댓값/최솟값 모두 저장하던 구조 -> minTree, maxTree 로 분리
-// 분리했을 때 메모리(32,552 KB) / 이전 구조 메모리(36,716 KB)
-
-// 추가적으로 세그먼트 트리 크기 구할 때, while 문으로 start 인덱스 구하는 거 말고 (2^start>=N) 식 활용해서 수식으로 구하는 것도 해봤는데 별 효과 없어서 제거함
-// 결국 while 로 구해도 O(logN) 이라서 크게 효과 없는 듯
-
-/**
- * 250617듯
- * Java8 | 실행시간: 372 ms, 메모리: 32552 KB
- */
+// 트리 분리하는 게 메모리 성능 더 좋음
 import java.io.*;
+import java.util.*;
 
+/*
+ * Java8 | 실행시간: 384 ms, 메모리: 36716 KB
+ */
 public class Baekjoon2357 {
-	
+
     private static class SegTree{
         int size, start;
-        int[] minTree;
-        int[] maxTree;
+        Node[] arr;
 
         SegTree(int n){
             size = n;
             start = 1;
 
             while(start < size) start <<= 1;
-            minTree = new int[start*2];
-            maxTree = new int[start*2];
+            arr = new Node[start * 2];
+
+            for (int i=0; i<start*2; i++) arr[i] = new Node();
         }
         
         // 선입력 받은 리프 노드로 전체 세그먼트 트리 구성
         // 하나의 공간은 그 구간의 최솟값, 최댓값을 가지고 있음
         void construct(){
             for (int i=start-1; i>0; i--) {
-                minTree[i] = Math.min(minTree[i*2], minTree[i*2+1]);
-                maxTree[i] = Math.max(maxTree[i*2], maxTree[i*2+1]);
+                arr[i].min = Math.min(arr[i*2].min, arr[i*2+1].min);
+                arr[i].max = Math.max(arr[i*2].max, arr[i*2+1].max);
             }
         }
         
@@ -45,13 +40,13 @@ public class Baekjoon2357 {
             while (a <= b){ // a 와 b 가 겹칠 때까지 왼쪽/오른쪽에서 가운데로 좁혀오도록 이동 (최고 높이의 공통 부모 노드까지 이동)
                 // 구간을 쪼갰을 때 양쪽 경계에 걸쳐 있는 예외 노드를 따로 챙겨주자
                 if ((a&1)==1){ // (1) a가 부모 노드의 오른쪽 노드일 때
-                    min = Math.min(min, minTree[a]);
-                    max = Math.max(max, maxTree[a]);
+                    min = Math.min(min, arr[a].min);
+                    max = Math.max(max, arr[a].max);
                     a++;
                 }
                 if ((b&1)==0){ // (2) b가 부모 노드의 왼쪽 노드일 때
-                    min = Math.min(min, minTree[b]);
-                    max = Math.max(max, maxTree[b]);
+                    min = Math.min(min, arr[b].min);
+                    max = Math.max(max, arr[b].max);
                     b--;
                 }
                 a >>= 1; // 다음 부모 노드로 올라감
@@ -63,6 +58,10 @@ public class Baekjoon2357 {
 
     private static class Node{
         int min, max;
+        Node(){
+            min = Integer.MAX_VALUE;
+            max = Integer.MIN_VALUE;
+        }
         Node(int min, int max){
             this.min = min;
             this.max = max;
@@ -76,7 +75,7 @@ public class Baekjoon2357 {
         SegTree st = new SegTree(N);
 
         for (int i=0;i<N;i++){
-            st.minTree[st.start + i] = st.maxTree[st.start + i] = readInt();    // 리프노드 입력
+            st.arr[st.start + i].min = st.arr[st.start + i].max = readInt();    // 리프노드 입력
         }
         st.construct(); // 전체 세그먼트 트리 구성
 
