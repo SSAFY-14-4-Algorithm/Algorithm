@@ -36,7 +36,7 @@ public class Baekjoon21939 {
                 Problem answer = null;
                 if(x == -1){    //가장 쉬운 문제 번호 출력
                     answer = problemTreeSet.first();
-                }else{
+                }else{          //가장 어려운 문제 번호 출력
                     answer = problemTreeSet.last();
                 }
                 bw.write(answer.number+"\n");
