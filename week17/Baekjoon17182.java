@@ -1,6 +1,9 @@
 import java.io.*;
 import java.util.*;
 
+/**
+ * 15932 KB, 300 ms
+ */
 public class Baekjoon17182 {
     private static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 	private static BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
