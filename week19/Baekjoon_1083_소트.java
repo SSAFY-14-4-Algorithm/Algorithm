@@ -5,7 +5,7 @@ import java.util.*;
  * 시간: 68ms
  * 메모리: 11524KB
  */
-public class Baekjoon1083_소트 {
+public class Baekjoon_1083_소트 {
 	// Input Handler
 	static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 	static StringBuilder sb = new StringBuilder();
