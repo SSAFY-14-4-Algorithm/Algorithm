@@ -277,3 +277,34 @@
 | 2357  | 백준   | [최솟값과 최댓값](https://www.acmicpc.net/problem/2357)              | 골드 I |
 
 </details>
+
+
+### 18주차 기업코테 문제
+
+<details>
+<summary>문제</summary>
+
+| 번호  | 사이트 | 문제                                                               | 난이도   |
+| ----- | ------ | ------------------------------------------------------------------ | -------- |
+| 2170  | 백준   | [선긋기](https://www.acmicpc.net/problem/2170)                      | 골드 V   |
+| 2011  | 백준   | [암호코드](https://www.acmicpc.net/problem/2011)                    | 골드 V  |
+| 20159  | 백준   | [동작그만.밑장 빼기냐?](https://www.acmicpc.net/problem/20159)      | 골드 IV  |
+| 17619  | 백준   | [개구리 점프](https://www.acmicpc.net/problem/17619)               | 골드 III |
+| 9466  | 백준   | [텀 프로젝트](https://www.acmicpc.net/problem/9466)                 | 골드 III |
+
+</details>
+
+
+### 19주차 기업코테 문제
+
+<details>
+<summary>문제</summary>
+
+| 번호  | 사이트 | 문제                                                               | 난이도   |
+| ----- | ------ | ------------------------------------------------------------------ | -------- |
+| 1083  | 백준   | [소트](https://www.acmicpc.net/problem/1083)                        | 골드 IV   |
+| 1939  | 백준   | [중량제한](https://www.acmicpc.net/problem/1939)                    | 골드 III  |
+| 14442  | 백준   | [벽 부수고 이동하기2](https://www.acmicpc.net/problem/14442)        | 골드 III  |
+
+
+</details>
