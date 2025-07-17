@@ -308,3 +308,18 @@
 
 
 </details>
+
+
+### 20주차 기업코테 문제
+
+<details>
+<summary>문제</summary>
+
+| 번호  | 사이트 | 문제                                                               | 난이도   |
+| ----- | ------ | ------------------------------------------------------------------ | -------- |
+| 1464  | 백준   | [뒤집기3](https://www.acmicpc.net/problem/1464)                    | 골드 IV   |
+| 1477  | 백준   | [휴게소 세우기](https://www.acmicpc.net/problem/1477)               | 골드 IV  |
+| 4179  | 백준   | [불!](https://www.acmicpc.net/problem/4179)                        | 골드 III  |
+
+
+</details>
