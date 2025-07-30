@@ -323,3 +323,21 @@
 
 
 </details>
+
+
+</details>
+
+
+### 21주차 DP 문제
+
+<details>
+<summary>문제</summary>
+
+| 번호  | 사이트 | 문제                                                               | 난이도   |
+| ----- | ------ | ------------------------------------------------------------------ | -------- |
+| 16500  | 백준   | [문자열 판별](https://www.acmicpc.net/problem/16500)                    | 골드 V   |
+| 16974  | 백준   | [레벨 햄버거](https://www.acmicpc.net/problem/16974)               | 골드 V  |
+| 1563  | 백준   | [개근상](https://www.acmicpc.net/problem/1563)                        | 골드 IV  |
+
+
+</details>
